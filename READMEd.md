@@ -1,5 +1,3 @@
-# MiDigitalLife
-MiDigitalLife Repository 
 # README #
 
 #MiDigitalLife#
@@ -35,7 +33,7 @@ The Javascript files, is just pure Jquery, But I'll be moving it to Angular 4 By
 
 ### How do I get set up? ###
 
-* The application start with a simple index.php file, which is outside of all folders.
+* Tthe application start with a simple index.php file, which is outside of all folders.
 The assets folder contain all Css and Javascript Files.
 
 The core folder, contain the mvc structure for all application.
@@ -72,6 +70,9 @@ NB: Do not make any change inside of this folder described bellow:
 Any question, please let me know, and i will be able to guide you guys at anytime
 
 
+* Repo owner or Jacinto Joao
+* Team allowed 
+* Rory Leisegang
+* Ryan Johnson
 
-/*Thanks All & Happy codding */
-/** Jacinto Joao (JJ) **/
+/*Thanks All */
