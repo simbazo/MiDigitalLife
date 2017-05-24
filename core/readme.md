@@ -1,10 +1,7 @@
 <p align="center"><img src="http://midigital.appenberg.co.za/assets/img/logos/Mdl_logo_colour-200x60.png"></p>
 
-Hi All,
-# editor2
-New editor for appenberg
 
-Hi ALl.
+## Hi ALl.
 
 This Repository is our Backend for all our existing and coming up Projects.
 
@@ -25,6 +22,11 @@ This Project contain all files else laravel Dependences, which you can get it, a
 2: Navigate to the the cloned repository folder and go inside of core by using your command line or terminal
 3: ex: cd /your_path/MiDigitalLife/core
 4: run the command "composer install"
+
+## Do not forget
+From Default git is not pushing my .env file, and i'm not sure why is doing that.
+
+so i have created a file name "env" inside core folder, please rename this file to ".env", don't forget just add . before the name of the file.
 
 After the steps bellolow, make sure that you got a folder called vendor inside core folder.
 
@@ -63,5 +65,5 @@ phpunit.xml
 
 Happy Coding and Reviews. Dont forget to drop me any email or whatsapp in case having trouble
 
-Jacinto Joao (JJ)
+## Jacinto Joao (JJ)
 
