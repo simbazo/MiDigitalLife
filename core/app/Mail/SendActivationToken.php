@@ -7,13 +7,15 @@ use Illuminate\Mail\Mailable;
 use App\Models\Shared\ActivationToken;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-
+/**
+ * @author [Jacinto Joao] <[<jacintotbrc@gmail.com>]>
+ */
 
 class SendActivationToken extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $token;
+    public $token; 
     /**
      * Create a new message instance.
      *
