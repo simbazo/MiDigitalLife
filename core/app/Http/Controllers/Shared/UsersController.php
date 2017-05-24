@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Shared;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Midigital\Repositories\Contracts\UserInterface as User;
+
 class UsersController extends Controller
 {
     protected $user;

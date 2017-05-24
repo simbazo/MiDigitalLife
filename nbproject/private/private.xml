@@ -2,6 +2,9 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/E:/Apache24/htdocs/homestead/laravel/mdl/MiDigitalLife/core/database/migrations/2017_05_24_015908_create_control_type_control_type-attributes_table.php</file>
+            <file>file:/E:/Apache24/htdocs/homestead/laravel/mdl/MiDigitalLife/core/database/migrations/2017_05_24_015053_create_events_table.php</file>
+        </group>
     </open-files>
 </project-private>

@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('address')->nullable();
             $table->string('postal_code')->nullable();
             $table->string('pobox')->nullable();
-            $table->string('company_uuid')->nullable();//uuid to identify user on login
+            $table->string('client_id')->nullable();//uuid to identify user on login
             $table->boolean('active')->default(false);
             $table->string('user_created',36)->nullable();
             $table->string('user_updated',36)->nullable();

@@ -18,6 +18,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix'=>'v1'],function(){
+    Route::group(['prefix'=>'editor'],function(){
+        Route::group(['prefix'=>'client'],function(){
+        Route::get('/list','Shared\ClientsController@index');
+        Route::post('/store','Shared\ClientsController@store');
+        });
+    });
+    
+    
 	Route::post('register','Auth\Api\APiAuthController@register');
 	Route::post('auth/login','Auth\Api\ApiLoginController@login');
 	Route::get('users','Shared\UsersController@index');

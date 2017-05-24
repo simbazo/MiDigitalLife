@@ -1,0 +1,25 @@
+ip: 192.168.10.10
+name: midigitallife
+hostname: midigitallife
+memory: 2048
+cpus: 2
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+keys:
+    - ~/.ssh/id_rsa
+    
+folders:
+    -
+        map: 'E:\Apache24\htdocs\homestead\laravel\mdl\miDigitalLife'
+        to: /home/vagrant/code/laravel/midigitallife
+        
+sites:
+    -
+        map: midigitallife.app
+        to: /home/vagrant/code/laravel/midigitallife
+        
+databases:
+    - mdl
+    
+

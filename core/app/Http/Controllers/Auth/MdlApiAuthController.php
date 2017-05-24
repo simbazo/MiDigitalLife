@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class ClassName extends AnotherClass
 {
 	
-	function __construct(argument)
+	public function __construct()
 	{
 		# code...
 	}
