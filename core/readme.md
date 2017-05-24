@@ -1,40 +1,67 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<p align="center"><img src="http://midigital.appenberg.co.za/assets/img/logos/Mdl_logo_colour-200x60.png"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Hi All,
+# editor2
+New editor for appenberg
 
-## About Laravel
+Hi ALl.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+This Repository is our Backend for all our existing and coming up Projects.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This project was developed and still in progress, using Laravel Framework.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+To have this Project running on your local development machine,
+you need to have any web server running and you must have PHP 7.0 running.
 
-## Learning Laravel
+If you are lazy guy like me, and like to avoid many setup, to get your local development sorted out, i would suggest you getting Laravel Homestead or Valet.
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+You can find the laravel homestead on laravel website, or by checking the url bellow.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+## https://laravel.com/docs/5.4/homestead
 
-## Contributing
+This Project contain all files else laravel Dependences, which you can get it, after having your local development enviroment sorted out, and follow the steps bellow.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+1: CLone the Repository
+2: Navigate to the the cloned repository folder and go inside of core by using your command line or terminal
+3: ex: cd /your_path/MiDigitalLife/core
+4: run the command "composer install"
 
-## Security Vulnerabilities
+After the steps bellolow, make sure that you got a folder called vendor inside core folder.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+And after this you done setting up and you ready to go.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+## Project Structure
+
+Core folder, contain all main core code which make the project to work.
+Inside of Core there some folders and files which we can make changes also some which we cannot make changes.
+
+Folders and Files  can be changed => {
+assets
+core/app/http/controllers
+core/app/Models
+core/app/Editor/Repositories/Eloquent
+core/resources/views
+core/routes
+core/database
+}
+
+##
+Folders not mentioned, please do not make change, Like => {
+core/config
+core/vendor
+core/bootstrap
+.env
+composer.json
+artisan
+package.json
+server.php
+webpack.mix.js
+lara.md
+phpunit.xml
+}
+
+Happy Coding and Reviews. Dont forget to drop me any email or whatsapp in case having trouble
+
+Jacinto Joao (JJ)
+
