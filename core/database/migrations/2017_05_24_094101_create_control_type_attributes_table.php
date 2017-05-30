@@ -15,8 +15,8 @@ class CreateControlTypeAttributesTable extends Migration
     {
         Schema::create('control_type_attributes', function (Blueprint $table) {
             $table->string('uuid',36)->unique();
-            $table->string('attribute')->nullable(false);
-            $table->string('value')->nullable(false);
+            $table->string('attribute_name')->nullable(false);
+            $table->string('Attribute_value')->nullable(false);
             $table->string('user_created')->nullable();
             $table->string('user_updated')->nullable();
             $table->string('user_deleted')->nullable();

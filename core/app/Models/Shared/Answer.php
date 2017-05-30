@@ -5,7 +5,7 @@ namespace App\Models\Shared;
 use App\Models\Shared\BaseModel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Answer extends Model
+class Answer extends BaseModel
 {
     use SoftDeletes;
     protected  $primaryKey = 'uuid';

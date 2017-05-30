@@ -5,7 +5,7 @@ namespace App\Models\Shared;
 use App\Models\Shared\BaseModel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Event extends Model
+class Event extends BaseModel
 {
     use SoftDeletes;
     
@@ -13,6 +13,6 @@ class Event extends Model
     
     protected $dates = ['deleted_at'];
     
-    protected  $fillable = ['product_id', 'user_id', 'date_created'];
+    protected  $fillable = ['product_id', 'user_created', 'user_updated', 'user_deleted'];
     
 }

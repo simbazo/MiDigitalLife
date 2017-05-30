@@ -25,14 +25,13 @@ class ClientFormRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'short_name'=>'required|unique:clients,short_name',
+            'short_name'=>'required',
+            'long_name'=>'optional',
+            'user_created'=>'optional',
+            'user_updated'=>'optional',
+            'user_deleted'=>'optional'
         ];
         
-        if($id = $this->client){
-            $rules['short_name'].= ','.$id.',uuid';
+        return $rules;
     }
-    
-    return $rules;
-}
-
 }

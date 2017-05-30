@@ -16,10 +16,9 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->string('uuid',36)->unique();
             $table->string('question')->nullable(false);
-            $table->string('data_type_id')->nullable(false);
-            $table->string('control_type_id')->nullable(false);
+            $table->string('data_type_uuid')->nullable(false);
+            $table->string('control_type_uuid')->nullable(false);
             $table->boolean('required')->default(0);
-            $table->smallInteger('order')->nullable();
             $table->string('user_created')->nullable();
             $table->string('user_updated')->nullable();
             $table->string('user_deleted')->nullable();

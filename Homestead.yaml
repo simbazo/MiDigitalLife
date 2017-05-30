@@ -20,6 +20,6 @@ sites:
         to: /home/vagrant/code/laravel/midigitallife
         
 databases:
-    - mdl
+    - midigitallife
     
 

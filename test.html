@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Get started with jQuery dForm</title>
+	<!-- Load jQuery and the minified plugin -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="dist/jquery.dform-1.1.0.min.js"></script>
+</head>
+
+<body>
+	<script>
+			$(document).ready(function () {
+				$(".js-generate").click(function() {
+					alert($("#source").text());
+                    $('#control-panel').dform($("#source").text());
+				});
+				
+			
+			});
+	</script>
+
+	<textarea rows="20" cols="100" id="source">
+		{
+            "name" : "username",
+            "id" : "txt-username",
+            "caption" : "Username",
+            "type" : "text",
+            "placeholder" : "E.g. user@example.com"
+        }
+	</textarea>
+	<p><input type="button" value="Generate control" class="js-generate" /></p>
+	<div id="control-panel">Your control will be placed here...</div>
+
+</body>
+</html>

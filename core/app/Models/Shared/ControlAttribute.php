@@ -5,7 +5,7 @@ namespace App\Models\Shared;
 use App\Models\Shared\BaseModel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ControlTypeAttribute extends Model
+class ControlAttribute extends BaseModel
 {
     use SoftDeletes;
     
@@ -13,6 +13,6 @@ class ControlTypeAttribute extends Model
     
     protected $dates = ['deleted_at'];
     
-    protected  $fillable = ['attribute', 'value'];
+    protected  $fillable = ['attribute', 'value', 'user_created', 'user_updated', 'user_deleted'];
     
 }

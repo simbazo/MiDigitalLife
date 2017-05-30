@@ -5,7 +5,7 @@ namespace App\Models\Shared;
 use App\Models\Shared\BaseModel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Product extends Model
+class Product extends BaseModel
 {
     use SoftDeletes;
     
@@ -13,6 +13,16 @@ class Product extends Model
     
     protected $dates = ['deleted_at'];
     
-    protected  $fillable = ['client_id', 'short_name', 'long_name'];
+    protected  $fillable = ['short_name', 'long_name', 'user_created', 'user_updated', 'user_deleted'];
+    
+    public function clients()
+    {
+        return $this->belongsToMany('App\Models\Shared\Client');
+    }
+
+    public function questions()
+    {
+        return $this->belongsToMany('App\Models\Shared\Question');
+    }
     
 }
