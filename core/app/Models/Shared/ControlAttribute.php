@@ -15,4 +15,8 @@ class ControlAttribute extends BaseModel
     
     protected  $fillable = ['attribute', 'value', 'user_created', 'user_updated', 'user_deleted'];
     
+    public function controltypes()
+    {
+        return $this->belongsToMany('App\Models\Shared\ControlType');
+    }
 }

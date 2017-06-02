@@ -17,6 +17,6 @@ class ControlType extends BaseModel
     
     public function attributes()
     {
-        return $this->belongsToMany('App\Models\Shared\ControlTypeAttribute');
+        return $this->belongsToMany('App\Models\Shared\ControlAttribute');
     }
 }

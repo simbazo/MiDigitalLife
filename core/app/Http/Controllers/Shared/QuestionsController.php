@@ -34,7 +34,7 @@ class QuestionsController extends Controller
      */
     public function index()
     {
-        return response()->json(Question::all());
+        return response()->json(Question::with('datatype', 'controltype')->get());
     }
 
     /**
@@ -79,6 +79,13 @@ class QuestionsController extends Controller
         $question = Question::with('datatype', 'controltype')->find($id);
         
         return response()->json($question);
+    }
+    
+    public function products($id)
+    {
+        $products = Question::find($id)->products()->get();
+        
+        return response()->json($products);
     }
 
     /**

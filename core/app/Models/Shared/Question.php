@@ -24,4 +24,8 @@ class Question extends BaseModel
     {
         return $this->hasOne('App\Models\Shared\ControlType', 'uuid', 'control_type_id');
     }
+    
+    public function products() {
+        return $this->belongsToMany('App\Models\Shared\Product');
+    }
 }

@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Shared;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\Shared\ControlTypeAttributeFormRequest;
+use App\Http\Requests\Shared\ControlAttributeFormRequest;
 use App\Http\Controllers\Controller;
-use App\Models\Shared\ControlTypeAttribute;
+use App\Models\Shared\ControlAttribute;
 
-class ControlTypeAttributesController extends Controller
+class ControlAttributesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class ControlTypeAttributesController extends Controller
      */
     public function index()
     {
-        return response()->json(ControlTypeAttribute::all()); 
+        return response()->json(ControlAttribute::all()); 
     }
 
     /**
@@ -35,17 +35,17 @@ class ControlTypeAttributesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ControlTypeAttributeFormRequest $request)
+    public function store(ControlAttributeFormRequest $request)
     {
         $data = [
-            'attribute_name' => $request->get('attribute'),
-            'attribute_value' => $request->get('value'),
+            'attribute' => $request->get('attribute'),
+            'value' => $request->get('value'),
             'user_created'=> '524385af-9fce-4d75-b7a1-09119117491f' //auth()->user()->uuid
         ];
         
-        $controltypeattribute = ControlTypeAttribute::create($data);
+        $controlattribute = ControlAttribute::create($data);
         
-        return response()->json(['msg'=>'New controltypeattribute created successfully'],201);
+        return response()->json(['msg'=>'New ControlAttribute created successfully'],201);
     }
 
     /**
@@ -56,9 +56,16 @@ class ControlTypeAttributesController extends Controller
      */
     public function show($id)
     {
-        $controltypeattribute = ControlTypeAttribute::find($id);
+        $controlattribute = ControlAttribute::find($id);
         
-        return response()->json($controltypeattribute);
+        return response()->json($controlattribute);
+    }
+    
+    public function controltypes($id)
+    {
+        $controltypes = ControlAttribute::find($id)->controltypes()->get();
+        
+        return response()->json($controltypes);
     }
 
     /**
@@ -79,19 +86,19 @@ class ControlTypeAttributesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ControlTypeAttributeFormRequest $request, $id)
+    public function update(ControlAttributeFormRequest $request, $id)
     {
-        $controltypeattribute = ControlTypeAttribute::find($id);
+        $controlattribute = ControlAttribute::find($id);
         
         $data = [
-            'attribute_name' => $request->get('attribute'),
-            'attribute_value' => $request->get('value'),
+            'attribute' => $request->get('attribute'),
+            'value' => $request->get('value'),
             'user_updated'=> '524385af-9fce-4d75-b7a1-09119117491f' //auth()->user()->uuid
         ];
         
-        $controltypeattribute->update($data);
+        $controlattribute->update($data);
         
-        return response()->json(['msg'=>'ControlTypeAttribute updated successfully'],201);
+        return response()->json(['msg'=>'ControlAttribute updated successfully'],201);
     }
 
     /**
@@ -102,15 +109,15 @@ class ControlTypeAttributesController extends Controller
      */
     public function destroy($id)
     {
-        $controltypeattribute = ControlTypeAttribute::find($id);
+        $controlattribute = ControlAttribute::find($id);
         
         $data = [
             'user_deleted'=> '524385af-9fce-4d75-b7a1-09119117491f' //auth()->user()->uuid
         ];
         
-        $controltypeattribute->update($data);
-        $controltypeattribute->delete($data);
+        $controlattribute->update($data);
+        $controlattribute->delete($data);
         
-        return response()->json(['msg'=>'ControlTypeAttribute deleted success'],201);
+        return response()->json(['msg'=>'ControlAttribute deleted success'],201);
     }
 }

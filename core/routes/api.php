@@ -40,6 +40,7 @@ Route::group(['prefix'=>'v1'],function(){
             Route::get('/','Shared\QuestionsController@index');   
             Route::post('/','Shared\QuestionsController@store');
             Route::get('/{id}','Shared\QuestionsController@show');
+            Route::get('/{id}/products','Shared\QuestionsController@products');
             Route::patch('/{id}','Shared\QuestionsController@update');
             Route::delete('/{id}','Shared\QuestionsController@destroy');
         });        
@@ -47,15 +48,17 @@ Route::group(['prefix'=>'v1'],function(){
             Route::get('/','Shared\ControlTypesController@index');   
             Route::post('/','Shared\ControlTypesController@store');
             Route::get('/{id}','Shared\ControlTypesController@show');
+            Route::get('/{id}/attributes','Shared\ControlTypesController@attributes');
             Route::patch('/{id}','Shared\ControlTypesController@update');
             Route::delete('/{id}','Shared\ControlTypesController@destroy');
         });        
-        Route::group(['prefix'=>'controltypeattribute'],function(){
-            Route::get('/','Shared\ControlTypeAttributesController@index');   
-            Route::post('/','Shared\ControlTypeAttributesController@store');
-            Route::get('/{id}','Shared\ControlTypeAttributesController@show');
-            Route::patch('/{id}','Shared\ControlTypeAttributesController@update');
-            Route::delete('/{id}','Shared\ControlTypeAttributesController@destroy');
+        Route::group(['prefix'=>'controlattribute'],function(){
+            Route::get('/','Shared\ControlAttributesController@index');   
+            Route::post('/','Shared\ControlAttributesController@store');
+            Route::get('/{id}','Shared\ControlAttributesController@show');
+            Route::get('/{id}/controltypes','Shared\ControlAttributesController@controltypes');
+            Route::patch('/{id}','Shared\ControlAttributesController@update');
+            Route::delete('/{id}','Shared\ControlAttributesController@destroy');
         });        
         Route::group(['prefix'=>'datatype'],function(){
             Route::get('/','Shared\DataTypesController@index');   

@@ -13,7 +13,7 @@ class DropTableControlTypeAttribute extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('control_type_attributes');
+       
     }
 
     /**
@@ -23,6 +23,6 @@ class DropTableControlTypeAttribute extends Migration
      */
     public function down()
     {
-        //
+         Schema::dropIfExists('control_type_attributes');
     }
 }
