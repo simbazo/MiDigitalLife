@@ -179,6 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\MidigitalLifeProvider::class,
         Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
+       //Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
 

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Shared;
 
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Requests\Shared\ProductFormRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Shared\Product;
+use App\Models\Shared\ControlType;
 
 /**
  * @resource Product
@@ -99,9 +101,18 @@ class ProductsController extends Controller
     */
     public function questions($id)
     {
-        $questions = Product::find($id)->questions()->orderBy('product_question.order', 'asc')->get();
+        $output = array();
         
-        return response()->json($questions);
+        $items = Product::find($id)->questions()->orderBy('product_question.order', 'asc')->get();
+        
+        foreach($items as $item) {
+            $controlType = ControlType::find($item->control_type_id)->with('attributes')->get()->toArray();
+            $item = $item->toArray();
+            array_push($item, $controlType);
+            array_push($output, $item);
+        }
+        
+        return response()->json($output);
     }
     
     public function edit($id)

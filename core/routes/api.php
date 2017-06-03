@@ -41,6 +41,7 @@ Route::group(['prefix'=>'v1'],function(){
             Route::post('/','Shared\QuestionsController@store');
             Route::get('/{id}','Shared\QuestionsController@show');
             Route::get('/{id}/products','Shared\QuestionsController@products');
+            Route::get('/{id}/controls','Shared\QuestionsController@controls');
             Route::patch('/{id}','Shared\QuestionsController@update');
             Route::delete('/{id}','Shared\QuestionsController@destroy');
         });        

@@ -33,7 +33,8 @@ class ControlTypesController extends Controller
      */
     public function index()
     {
-        return response()->json(ControlType::with('attributes')->get());
+        //return response()->json(ControlType::with('attributes')->get());
+        return response()->json(ControlType::all());
     }
 
     /**
@@ -73,7 +74,7 @@ class ControlTypesController extends Controller
      */
     public function show($id)
     {
-        $controltype = ControlType::find($id)->with('attributes')->get();
+        $controltype = ControlType::find($id)->get();
         
         return response()->json($controltype);
     }

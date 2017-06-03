@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Shared;
 
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Requests\Shared\QuestionFormRequest;
 use App\Http\Controllers\Controller;
@@ -86,6 +87,17 @@ class QuestionsController extends Controller
         $products = Question::find($id)->products()->get();
         
         return response()->json($products);
+    }
+    
+    public function controls($id)
+    {
+        $controls = DB::table('control_attributes')
+            //->join('contacts', 'users.id', '=', 'contacts.user_id')
+            //->join('orders', 'users.id', '=', 'orders.user_id')
+            ->select('control_attributes.*')
+            ->get();
+        
+        return response()->json($controls);
     }
 
     /**
