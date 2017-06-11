@@ -16,6 +16,7 @@ class CreateDataTypesTable extends Migration
         Schema::create('data_types', function (Blueprint $table) {
             $table->string('uuid',36)->unique();
             $table->string('data_type')->nullable(false);
+            $table->string('data_length')->nullable();
             $table->string('user_created')->nullable();
             $table->string('user_updated')->nullable();
             $table->string('user_deleted')->nullable();

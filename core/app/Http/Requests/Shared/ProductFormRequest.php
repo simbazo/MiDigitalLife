@@ -26,10 +26,6 @@ class ProductFormRequest extends FormRequest
     {
         return [
             'short_name'=>'required',
-            'long_name'=>'optional',
-            'user_created'=>'optional',
-            'user_updated'=>'optional',
-            'user_deleted'=>'optional'
         ];
     }
 }

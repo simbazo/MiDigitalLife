@@ -19,9 +19,14 @@ class Product extends BaseModel
     {
         return $this->belongsToMany('App\Models\Shared\Client');
     }
+    
+    public function projects()
+    {
+        return $this->belongsToMany('App\Models\Shared\Project');
+    }
 
     public function questions()
     {
         return $this->belongsToMany('App\Models\Shared\Question');
-    }    
+    }   
 }

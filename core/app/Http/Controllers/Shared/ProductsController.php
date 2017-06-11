@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Shared;
 
-use DB;
 use Illuminate\Http\Request;
 use App\Http\Requests\Shared\ProductFormRequest;
 use App\Http\Controllers\Controller;
@@ -81,16 +80,46 @@ class ProductsController extends Controller
     }
     
     /**
-     * Display a list of Clients that use this Product.
+     * Display a list of Projects that use this Product.
      * 
      * @param  string(36)  $id
      * @return \Illuminate\Http\Response
      */
-    public function clients($id)
+    public function projects($id)
     {
-        $clients = Product::find($id)->clients()->get();
+        $projects = Product::find($id)->projects()->get();
         
-        return response()->json($clients);
+        return response()->json($projects);
+    }
+    
+    /**
+     * Attach a Project to the Product.
+     * 
+     * @param  \Illuminate\Http\Request  $request[project_uuid]
+     * @param  string(36)  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function attachProject(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $product->projects()->attach($request->get('project_uuid'));
+        
+        return response()->json(['msg'=>'Project attached to product successfully'],201);
+    }
+    
+     /**
+     * Detach a Project from the Product.
+     * 
+     * @param  \Illuminate\Http\Request  $request[project_uuid]
+     * @param  string(36)  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function detachProject(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $product->projects()->detach($request->get('project_uuid'));
+        
+        return response()->json(['msg'=>'Project detached from product successfully'],201);
     }
     
     /**
@@ -113,6 +142,36 @@ class ProductsController extends Controller
         }
         
         return response()->json($output);
+    }
+    
+    /**
+     * Attach a Question to the Product.
+     * 
+     * @param  \Illuminate\Http\Request  $request[question_uuid]
+     * @param  string(36)  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function attachQuestion(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $product->questions()->attach($request->get('question_uuid'));
+        
+        return response()->json(['msg'=>'Question attached to product successfully'],201);
+    }
+    
+     /**
+     * Detach a Question from the Product.
+     * 
+     * @param  \Illuminate\Http\Request  $request[question_uuid]
+     * @param  string(36)  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function detachQuestion(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $product->questions()->detach($request->get('question_uuid'));
+        
+        return response()->json(['msg'=>'Question detached from product successfully'],201);
     }
     
     public function edit($id)

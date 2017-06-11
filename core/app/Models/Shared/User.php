@@ -45,4 +45,9 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
     public static function byEmail($email){
         return static::where('email',$email);
     }
+    
+    public function client()
+    {
+        return $this->belongsToMany('App\Models\Shared\Client');
+    }
 }

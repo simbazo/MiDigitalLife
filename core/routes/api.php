@@ -18,24 +18,60 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix'=>'v1'],function(){
-    Route::group(['prefix'=>'editor'],function(){
-        Route::group(['prefix'=>'client'],function(){
-            Route::get('/','Shared\ClientsController@index');   
-            Route::post('/','Shared\ClientsController@store');
-            Route::get('/{id}','Shared\ClientsController@show'); 
-            Route::get('/{id}/products','Shared\ClientsController@products');
-            Route::patch('/{id}','Shared\ClientsController@update');
-            Route::delete('/{id}','Shared\ClientsController@destroy');
-        });        
-        Route::group(['prefix'=>'product'],function(){
-            Route::get('/','Shared\ProductsController@index');   
-            Route::post('/','Shared\ProductsController@store');
-            Route::get('/{id}','Shared\ProductsController@show');
-            Route::get('/{id}/clients','Shared\ProductsController@clients'); 
-            Route::get('/{id}/questions','Shared\ProductsController@questions');            
-            Route::patch('/{id}','Shared\ProductsController@update');
-            Route::delete('/{id}','Shared\ProductsController@destroy');            
-        });             
+    Route::group(['prefix'=>'client'],function(){
+        Route::get('/','Shared\ClientsController@index');   
+        Route::post('/','Shared\ClientsController@store');
+        Route::get('/{id}','Shared\ClientsController@show'); 
+        Route::get('/{id}/projects','Shared\ClientsController@projects');
+        Route::post('/{id}/attachproject','Shared\ClientsController@attachProject');
+        Route::post('/{id}/detachproject','Shared\ClientsController@detachProject');
+        Route::get('/{id}/users','Shared\ClientsController@users');
+        Route::post('/{id}/attachuser','Shared\ClientsController@attachUser');
+        Route::post('/{id}/detachuser','Shared\ClientsController@detachUser');
+        Route::patch('/{id}','Shared\ClientsController@update');
+        Route::delete('/{id}','Shared\ClientsController@destroy');
+    });
+    
+    Route::group(['prefix'=>'project'],function(){
+        Route::get('/','Shared\ProjectsController@index');   
+        Route::post('/','Shared\ProjectsController@store');
+        Route::get('/{id}','Shared\ProjectsController@show'); 
+        Route::get('/{id}/clients','Shared\ProjectsController@clients');
+        Route::post('/{id}/attachclient','Shared\ProjectsController@attachClient');
+        Route::post('/{id}/detachclient','Shared\ProjectsController@detachClient');
+        Route::get('/{id}/products','Shared\ProjectsController@products');
+        Route::post('/{id}/attachproduct','Shared\ProjectsController@attachProduct');
+        Route::post('/{id}/detachproduct','Shared\ProjectsController@detachProduct');
+        Route::patch('/{id}','Shared\ProjectsController@update');
+        Route::delete('/{id}','Shared\ProjectsController@destroy');
+    });
+    
+    Route::group(['prefix'=>'product'],function(){
+        Route::get('/','Shared\ProductsController@index');   
+        Route::post('/','Shared\ProductsController@store');
+        Route::get('/{id}','Shared\ProductsController@show');
+        Route::get('/{id}/projects','Shared\ProductsController@projects');
+        Route::post('/{id}/attachproject','Shared\ProductsController@attachProject');
+        Route::post('/{id}/detachproject','Shared\ProductsController@detachProject');
+        Route::get('/{id}/questions','Shared\ProductsController@questions');
+        Route::post('/{id}/attachquestion','Shared\ProductsController@attachQuestion');
+        Route::post('/{id}/detachquestion','Shared\ProductsController@detachQuestion');
+        Route::patch('/{id}','Shared\ProductsController@update');
+        Route::delete('/{id}','Shared\ProductsController@destroy');            
+    });
+    
+    Route::group(['prefix'=>'question'],function(){
+        Route::get('/','Shared\QuestionsController@index');   
+        Route::post('/','Shared\QuestionsController@store');
+        Route::get('/{id}','Shared\QuestionsController@show');
+        Route::get('/{id}/products','Shared\QuestionsController@products');
+        Route::get('/{id}/controls','Shared\QuestionsController@controls');
+        Route::patch('/{id}','Shared\QuestionsController@update');
+        Route::delete('/{id}','Shared\QuestionsController@destroy');
+    });
+    
+    Route::group(['prefix'=>'editor'],function(){                
+                     
         Route::group(['prefix'=>'question'],function(){
             Route::get('/','Shared\QuestionsController@index');   
             Route::post('/','Shared\QuestionsController@store');

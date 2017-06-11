@@ -24,8 +24,7 @@ class ControlTypeFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'control_type'=>'required',
-            'control_tag'=>'required',
+            'control_type'=>'unique:control_types',
         ];
     }
 }

@@ -15,8 +15,8 @@ class CreateAnswersTable extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->string('uuid',36)->unique();
-            $table->string('event_id')->nullable(false);
-            $table->string('question_id')->nullable(false);
+            $table->string('event_uuid')->nullable(false);
+            $table->string('question_uuid')->nullable(false);
             $table->string('answer')->nullable();
             $table->string('user_created')->nullable();
             $table->string('user_updated')->nullable();

@@ -3,11 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Apache24/htdocs/homestead/laravel/mdl/MiDigitalLife/core/app/Http/Controllers/Shared/ProductsController.php</file>
-            <file>file:/E:/Apache24/htdocs/homestead/laravel/mdl/MiDigitalLife/core/config/app.php</file>
-            <file>file:/E:/Apache24/htdocs/homestead/laravel/mdl/MiDigitalLife/core/app/Models/Shared/Product.php</file>
-            <file>file:/E:/Apache24/htdocs/homestead/laravel/mdl/MiDigitalLife/core/routes/api.php</file>
             <file>file:/E:/Apache24/htdocs/homestead/laravel/mdl/MiDigitalLife/core/app/Http/Controllers/Shared/ClientsController.php</file>
+            <file>file:/E:/Apache24/htdocs/homestead/laravel/mdl/MiDigitalLife/core/app/Http/Controllers/Shared/ProductsController.php</file>
+            <file>file:/E:/Apache24/htdocs/homestead/laravel/mdl/MiDigitalLife/core/app/Http/Controllers/Shared/QuestionsController.php</file>
+            <file>file:/E:/Apache24/htdocs/homestead/laravel/mdl/MiDigitalLife/core/app/Http/Controllers/Shared/ControlTypesController.php</file>
+            <file>file:/E:/Apache24/htdocs/homestead/laravel/mdl/MiDigitalLife/core/routes/api.php</file>
+            <file>file:/E:/Apache24/htdocs/homestead/laravel/mdl/MiDigitalLife/core/app/Http/Controllers/Shared/DataTypesController.php</file>
+            <file>file:/E:/Apache24/htdocs/homestead/laravel/mdl/MiDigitalLife/core/.env</file>
+            <file>file:/E:/Apache24/htdocs/homestead/laravel/mdl/MiDigitalLife/core/app/Http/Requests/Shared/ControlTypeFormRequest.php</file>
         </group>
     </open-files>
 </project-private>

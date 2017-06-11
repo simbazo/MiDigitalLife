@@ -15,7 +15,6 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->string('uuid', 36)->unique();
-            $table->string('client_id')->nullable(false);
             $table->string('short_name', 20)->unique()->nullable(false);
             $table->string('long_name')->unique()->nullable();
             $table->string('user_created')->nullable();
@@ -24,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->softDeletes();
             $table->timestamps();
             
-            $table->foreign('client_id')->references('uuid')->on('clients')->onDelete('cascade');
+            //$table->foreign('client_id')->references('uuid')->on('clients')->onDelete('cascade');
         });
     }
 

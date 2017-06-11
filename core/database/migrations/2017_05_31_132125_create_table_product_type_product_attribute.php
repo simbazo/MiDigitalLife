@@ -18,8 +18,8 @@ class CreateTableProductTypeProductAttribute extends Migration
             $table->string('control_type_uuid')->nullable(false);
             $table->string('control_attribute_uuid')->nullable(false);
             
-            $table->foreign('control_type_uuid')->references('uuid')->on('control_types')->onDelete('cascade');
-            $table->foreign('control_attribute_uuid')->references('uuid')->on('control_attributes')->onDelete('cascade');
+            //$table->foreign('control_type_uuid')->references('uuid')->on('control_types')->onDelete('cascade');
+            //$table->foreign('control_attribute_uuid')->references('uuid')->on('control_attributes')->onDelete('cascade');
         });
     }
 

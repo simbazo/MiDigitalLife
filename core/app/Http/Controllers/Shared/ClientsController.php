@@ -10,7 +10,7 @@ use App\Models\Shared\Client;
 /**
  * @resource Client
  *
- * Clients are stored in the tbl_Clients table. They represent clients of miDigitalLife
+ * Clients are stored in the tbl_Clients table. They represent clients of miDigitalLife.
  */
 
 class ClientsController extends Controller
@@ -73,8 +73,7 @@ class ClientsController extends Controller
      */
     public function show($id)
     {
-        $client = Client::find($id);
-        
+        $client = Client::find($id);        
         return response()->json($client);
     }
     
@@ -84,11 +83,83 @@ class ClientsController extends Controller
      * @param  string(36)  $id     *
      * @return \Illuminate\Http\Response
      */
-    public function products($id)
+    public function projects($id)
     {
-        $products = Client::find($id)->products()->get();
+        $projects = Client::find($id)->projects()->get();        
+        return response()->json($projects);
+    }
+    
+    /**
+     * Attach a Project to the Client.
+     * 
+     * @param  \Illuminate\Http\Request  $request[project_uuid]
+     * @param  string(36)  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function attachProject(Request $request, $id)
+    {
+        $client = Client::find($id);
+        $client->projects()->attach($request->get('project_uuid'));
         
-        return response()->json($products);
+        return response()->json(['msg'=>'Project attached to client successfully'],201);
+    }
+    
+     /**
+     * Detach a Project from the Client.
+     * 
+     * @param  \Illuminate\Http\Request  $request[project_uuid]
+     * @param  string(36)  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function detachProject(Request $request, $id)
+    {
+        $client = Client::find($id);
+        $client->projects()->detach($request->get('project_uuid'));
+        
+        return response()->json(['msg'=>'Project detached from client successfully'],201);
+    }
+    
+    /**
+     * Display the Client Users.
+     * 
+     * @param  string(36)  $id     *
+     * @return \Illuminate\Http\Response
+     */
+    public function users($id)
+    {
+        $users = Client::find($id)->users()->get();        
+        return response()->json($users);
+        //return "A list of users that belong to this client.";
+    }
+    
+    /**
+     * Attach a User to the Client.
+     * 
+     * @param  \Illuminate\Http\Request  $request[user_uuid]
+     * @param  string(36)  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function attachUser(Request $request, $id)
+    {
+        $client = Client::find($id);
+        $client->users()->attach($request->get('user_uuid'));
+        
+        return response()->json(['msg'=>'User attached to client successfully'],201);
+    }
+    
+     /**
+     * Detach a User from the Client.
+     * 
+     * @param  \Illuminate\Http\Request  $request[user_uuid]
+     * @param  string(36)  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function detachUser(Request $request, $id)
+    {
+        $client = Client::find($id);
+        $client->users()->detach($request->get('user_uuid'));
+        
+        return response()->json(['msg'=>'User detached from client successfully'],201);
     }
 
     /**

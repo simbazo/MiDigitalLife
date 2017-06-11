@@ -60,7 +60,6 @@ class QuestionsController extends Controller
             'question' => $request->get('question'),
             'data_type_id' => $request->get('data_type_id'),
             'control_type_id' => $request->get('control_type_id'),
-            'order' => $request->get('order'),
             'user_created'=> '524385af-9fce-4d75-b7a1-09119117491f' //auth()->user()->uuid
         ];
         
@@ -126,7 +125,6 @@ class QuestionsController extends Controller
             'question' => $request->get('question'),
             'data_type_id' => $request->get('data_type_id'),
             'control_type_id' => $request->get('control_type_id'),
-            'order' => $request->get('order'),
             'user_updated'=> '524385af-9fce-4d75-b7a1-09119117491f' //auth()->user()->uuid
         ];
         

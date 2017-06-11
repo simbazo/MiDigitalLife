@@ -16,10 +16,18 @@ class Client extends BaseModel
     protected  $fillable = ['short_name', 'long_name', 'user_created', 'user_updated', 'user_deleted'];
     
     /**
-     * The products that belong to the client.
+     * The users that belong to the client.
      */
-    public function products()
+    public function users()
     {
-        return $this->belongsToMany('App\Models\Shared\Product');
+        return $this->belongsToMany('App\Models\Shared\User');
+    }
+    
+    /**
+     * The projects that belong to the client.
+     */
+    public function projects()
+    {
+        return $this->belongsToMany('App\Models\Shared\Project');
     }
 }

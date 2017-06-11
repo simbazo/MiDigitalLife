@@ -15,15 +15,18 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->string('uuid',36)->unique();
-            $table->string('question')->nullable(false);
             $table->string('data_type_uuid')->nullable(false);
             $table->string('control_type_uuid')->nullable(false);
-            $table->boolean('required')->default(0);
+            $table->string('question')->nullable(false);
+            $table->string('description')->nullable();
             $table->string('user_created')->nullable();
             $table->string('user_updated')->nullable();
             $table->string('user_deleted')->nullable();
             $table->softDeletes();
             $table->timestamps();
+            
+            //$table->foreign('data_type_uuid')->references('uuid')->on('data_types')->onDelete('cascade');
+            //$table->foreign('control_type_uuid')->references('uuid')->on('control_types')->onDelete('cascade');
         });
     }
 
