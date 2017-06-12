@@ -13,16 +13,11 @@ class Question extends BaseModel
     
     protected $dates = ['deleted_at'];
     
-    protected  $fillable = ['question', 'data_type_id', 'control_type_id', 'user_created', 'user_updated', 'user_deleted'];
+    protected  $fillable = ['question', 'control_uuid', 'user_created', 'user_updated', 'user_deleted'];
     
-    public function datatype()
+    public function control()
     {
-        return $this->hasOne('App\Models\Shared\DataType', 'uuid', 'data_type_id');
-    }
-    
-    public function controltype()
-    {
-        return $this->hasOne('App\Models\Shared\ControlType', 'uuid', 'control_type_id');
+        return $this->hasOne('App\Models\Shared\Control');
     }
     
     public function products() {

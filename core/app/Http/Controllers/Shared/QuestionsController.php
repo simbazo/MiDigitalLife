@@ -22,8 +22,8 @@ class QuestionsController extends Controller
      * Returns a list of existing questions with the following data:
      *  - uuid
      *  - question
-     *  - data_type_uuid
-     *  - control_type_uuid
+     *  - control_uuid
+     *      - control
      *  - user_created
      *  - user_updated
      *  - user_deleted
@@ -35,17 +35,7 @@ class QuestionsController extends Controller
      */
     public function index()
     {
-        return response()->json(Question::with('datatype', 'controltype')->get());
-    }
-
-    /**
-     * Show the form for creating a new Question.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return response()->json(Question::with('control')->get());
     }
 
     /**
@@ -58,8 +48,7 @@ class QuestionsController extends Controller
     {
         $data = [
             'question' => $request->get('question'),
-            'data_type_id' => $request->get('data_type_id'),
-            'control_type_id' => $request->get('control_type_id'),
+            'control_uuid' => $request->get('control_uuid'),
             'user_created'=> '524385af-9fce-4d75-b7a1-09119117491f' //auth()->user()->uuid
         ];
         
@@ -76,11 +65,17 @@ class QuestionsController extends Controller
      */
     public function show($id)
     {
-        $question = Question::with('datatype', 'controltype')->find($id);
+        $question = Question::with('control')->find($id);
         
         return response()->json($question);
     }
     
+    /**
+     * Display a list of Products that have this Question.
+     *
+     * @param  string(36)  $id
+     * @return \Illuminate\Http\Response
+     */
     public function products($id)
     {
         $products = Question::find($id)->products()->get();
@@ -88,26 +83,21 @@ class QuestionsController extends Controller
         return response()->json($products);
     }
     
-    public function controls($id)
-    {
-        $controls = DB::table('control_attributes')
-            //->join('contacts', 'users.id', '=', 'contacts.user_id')
-            //->join('orders', 'users.id', '=', 'orders.user_id')
-            ->select('control_attributes.*')
-            ->get();
-        
-        return response()->json($controls);
-    }
-
     /**
-     * Show the form for editing the Question.
+     * Display the Control that is used to answer this Question.
      *
      * @param  string(36)  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function control($id)
     {
-        //
+        $control = Question::find($id)->control()->get();
+            //->join('contacts', 'users.id', '=', 'contacts.user_id')
+            //->join('orders', 'users.id', '=', 'orders.user_id')
+            //->select('control_attributes.*')
+            //->get();
+        
+        return response()->json($control);
     }
 
     /**
@@ -123,8 +113,7 @@ class QuestionsController extends Controller
         
         $data = [
             'question' => $request->get('question'),
-            'data_type_id' => $request->get('data_type_id'),
-            'control_type_id' => $request->get('control_type_id'),
+            'control_uuid' => $request->get('control_uuid'),
             'user_updated'=> '524385af-9fce-4d75-b7a1-09119117491f' //auth()->user()->uuid
         ];
         
@@ -136,7 +125,7 @@ class QuestionsController extends Controller
     /**
      * Remove the Question from storage.
      * 
-     * Questions use soft deletes
+     * Questions use soft deletes.
      *
      * @param  string(36)  $id
      * @return \Illuminate\Http\Response

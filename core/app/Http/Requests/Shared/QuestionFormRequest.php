@@ -25,11 +25,7 @@ class QuestionFormRequest extends FormRequest
     {
         return [
             'question'=>'required',
-            'data_type_id'=>'required',
-            'control_type_id'=>'required',
-            'user_created'=>'optional',
-            'user_updated'=>'optional',
-            'user_deleted'=>'optional'
+            'control_uuid'=>'required',
         ];
     }
 }
