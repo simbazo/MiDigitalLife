@@ -33,7 +33,7 @@ class ControlsController extends Controller
     public function index()
     {
         //return response()->json(Control::with('attributes')->get());
-        return response()->json(Control::all());
+        return response()->json(Control::with('attributes')->get());
     }
 
     /**
@@ -62,7 +62,7 @@ class ControlsController extends Controller
      */
     public function show($id)
     {
-        $control = Control::find($id)->get();
+        $control = Control::with('attributes')->find($id);
         
         return response()->json($control);
     }
@@ -78,6 +78,36 @@ class ControlsController extends Controller
         $attributes = Control::find($id)->attributes()->get();
         
         return response()->json($attributes);
+    }
+    
+    /**
+     * Attach a Attribute to the Control.
+     * 
+     * @param  \Illuminate\Http\Request  $request[attribute_uuid]
+     * @param  string(36)  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function attachAttribute(Request $request, $id)
+    {
+        $control = Control::find($id);
+        $control->attributes()->attach($request->get('attribute_uuid'));
+        
+        return response()->json(['msg'=>'Attribute attached to control successfully'],201);
+    }
+    
+     /**
+     * Detach a Attribute from the Control.
+     * 
+     * @param  \Illuminate\Http\Request  $request[attribute_uuid]
+     * @param  string(36)  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function detachAttribute(Request $request, $id)
+    {
+        $control = Control::find($id);
+        $control->attributes()->detach($request->get('attribute_uuid'));
+        
+        return response()->json(['msg'=>'Attribute detached from control successfully'],201);
     }
 
     /**

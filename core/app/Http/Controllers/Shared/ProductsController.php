@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Shared;
 
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Requests\Shared\ProductFormRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Shared\Product;
-use App\Models\Shared\ControlType;
+use App\Models\Shared\Control;
 
 /**
  * @resource Product
@@ -130,18 +131,8 @@ class ProductsController extends Controller
     */
     public function questions($id)
     {
-        $output = array();
-        
-        $items = Product::find($id)->questions()->orderBy('product_question.order', 'asc')->get();
-        
-        foreach($items as $item) {
-            $controlType = ControlType::find($item->control_type_id)->with('attributes')->get()->toArray();
-            $item = $item->toArray();
-            array_push($item, $controlType);
-            array_push($output, $item);
-        }
-        
-        return response()->json($output);
+        $questions = Product::find($id)->questions()->orderBy('product_question.order', 'asc')->get();
+        return response()->json($questions);
     }
     
     /**
@@ -153,8 +144,15 @@ class ProductsController extends Controller
      */
     public function attachQuestion(Request $request, $id)
     {
+        $questionID = $request->get('question_uuid');
         $product = Product::find($id);
-        $product->questions()->attach($request->get('question_uuid'));
+        $product->questions()->attach($questionID);
+        
+        //update product_question pivot table with order and grid values
+        DB::table('product_question')
+            ->where('product_uuid', $id)
+            ->where('question_uuid', $questionID)
+            ->update(['order' => $request->get('order'), 'grid' => $request->get('grid')]);
         
         return response()->json(['msg'=>'Question attached to product successfully'],201);
     }
@@ -174,9 +172,37 @@ class ProductsController extends Controller
         return response()->json(['msg'=>'Question detached from product successfully'],201);
     }
     
-    public function edit($id)
+    /**
+     * Return the 'expoded' Product with:
+     *  - Questions
+     *      - Control
+     *          -Attributes
+     * 
+     * @param  \Illuminate\Http\Request  $request[question_uuid]
+     * @param  string(36)  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function form($id)
     {
-        //
+        $product = Product::with('questions')->find($id);
+        
+        //$product->map(function ($product) {
+            //$product['test'] = 'please ignore this';
+            //foreach ($product->questions as $question) {
+                //$control['controls'] = Control::with('attributes')->find($question->control_uuid);
+                
+            //}
+            
+            //return $product;
+        //});
+        
+        $product->questions->map(function ($question) {
+            $control = Control::with('attributes')->find($question->control_uuid);
+            $question['control'] = $control;
+            return $question;
+        });
+        
+        return response()->json($product);
     }
 
     /**

@@ -14,8 +14,8 @@ class CreateControlsTable extends Migration
     public function up()
     {
         Schema::create('controls', function (Blueprint $table) {
-            $table->string('uuid',36)->unique();
-            $table->string('control')->nullable(false);
+            $table->string('uuid',36)->primary();
+            $table->string('control')->unique()->nullable(false);
             $table->string('user_created')->nullable();
             $table->string('user_updated')->nullable();
             $table->string('user_deleted')->nullable();

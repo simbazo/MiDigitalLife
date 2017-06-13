@@ -5,7 +5,7 @@ namespace App\Models\Shared;
 use App\Models\Shared\BaseModel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ControlAttribute extends BaseModel
+class Attribute extends BaseModel
 {
     use SoftDeletes;
     
@@ -15,8 +15,8 @@ class ControlAttribute extends BaseModel
     
     protected  $fillable = ['attribute', 'value', 'user_created', 'user_updated', 'user_deleted'];
     
-    public function controltypes()
+    public function controls()
     {
-        return $this->belongsToMany('App\Models\Shared\ControlType');
+        return $this->belongsToMany('App\Models\Shared\Control');
     }
 }

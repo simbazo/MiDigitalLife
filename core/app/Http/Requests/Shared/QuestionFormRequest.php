@@ -24,7 +24,7 @@ class QuestionFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'question'=>'required',
+            'short_question'=>'required',
             'control_uuid'=>'required',
         ];
     }

@@ -2,9 +2,10 @@
 
 namespace App\Models\Shared;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Shared\BaseModel;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Control extends Model
+class Control extends BaseModel
 {
     use SoftDeletes;
     
@@ -16,7 +17,7 @@ class Control extends Model
     
     public function questions()
     {
-        return $this->belongsToMany('App\Models\Shared\Question');
+        return $this->belongsTo('App\Models\Shared\Question', 'control_uuid', 'uuid');
     }
     
     public function attributes()

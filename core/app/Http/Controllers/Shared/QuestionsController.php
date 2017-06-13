@@ -35,6 +35,7 @@ class QuestionsController extends Controller
      */
     public function index()
     {
+        //return response()->json(Question::with('control')->get());
         return response()->json(Question::with('control')->get());
     }
 
@@ -47,7 +48,8 @@ class QuestionsController extends Controller
     public function store(QuestionFormRequest $request)
     {
         $data = [
-            'question' => $request->get('question'),
+            'short_question' => $request->get('short_question'),
+            'long_question' => $request->get('long_question'),
             'control_uuid' => $request->get('control_uuid'),
             'user_created'=> '524385af-9fce-4d75-b7a1-09119117491f' //auth()->user()->uuid
         ];
@@ -66,6 +68,7 @@ class QuestionsController extends Controller
     public function show($id)
     {
         $question = Question::with('control')->find($id);
+        //$question = Question::find($id);
         
         return response()->json($question);
     }
@@ -112,7 +115,8 @@ class QuestionsController extends Controller
         $question = Question::find($id);
         
         $data = [
-            'question' => $request->get('question'),
+            'short_question' => $request->get('short_question'),
+            'long_question' => $request->get('long_question'),
             'control_uuid' => $request->get('control_uuid'),
             'user_updated'=> '524385af-9fce-4d75-b7a1-09119117491f' //auth()->user()->uuid
         ];

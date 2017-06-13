@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateControlAttributesTable extends Migration
+class CreateAttributesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateControlAttributesTable extends Migration
      */
     public function up()
     {
-        Schema::create('control_attributes', function (Blueprint $table) {
-            $table->string('uuid',36)->unique();
+        Schema::create('attributes', function (Blueprint $table) {
+            $table->string('uuid',36)->primary();
             $table->string('attribute')->nullable(false);
             $table->string('value')->nullable(false);
             $table->string('user_created')->nullable();
@@ -32,7 +32,7 @@ class CreateControlAttributesTable extends Migration
      */
     public function down()
     {
-        Schema::create('control_attributes', function (Blueprint $table) {
+        Schema::table('attributes', function (Blueprint $table) {
             //
         });
     }

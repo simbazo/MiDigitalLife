@@ -4,7 +4,7 @@ namespace App\Http\Requests\Shared;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ControlAttributeFormRequest extends FormRequest
+class ControlFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,7 @@ class ControlAttributeFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'attribute'=>'required',
-            'value'=>'required',
+            'control'=>'required|unique:controls',
         ];
     }
 }

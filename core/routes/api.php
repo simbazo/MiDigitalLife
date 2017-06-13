@@ -30,8 +30,7 @@ Route::group(['prefix'=>'v1'],function(){
         Route::post('/{id}/detachuser','Shared\ClientsController@detachUser');
         Route::patch('/{id}','Shared\ClientsController@update');
         Route::delete('/{id}','Shared\ClientsController@destroy');
-    });
-    
+    });    
     Route::group(['prefix'=>'projects'],function(){
         Route::get('/','Shared\ProjectsController@index');   
         Route::post('/','Shared\ProjectsController@store');
@@ -44,8 +43,7 @@ Route::group(['prefix'=>'v1'],function(){
         Route::post('/{id}/detachproduct','Shared\ProjectsController@detachProduct');
         Route::patch('/{id}','Shared\ProjectsController@update');
         Route::delete('/{id}','Shared\ProjectsController@destroy');
-    });
-    
+    });    
     Route::group(['prefix'=>'products'],function(){
         Route::get('/','Shared\ProductsController@index');   
         Route::post('/','Shared\ProductsController@store');
@@ -56,43 +54,37 @@ Route::group(['prefix'=>'v1'],function(){
         Route::get('/{id}/questions','Shared\ProductsController@questions');
         Route::post('/{id}/attachquestion','Shared\ProductsController@attachQuestion');
         Route::post('/{id}/detachquestion','Shared\ProductsController@detachQuestion');
+        Route::get('/{id}/form','Shared\ProductsController@form');
         Route::patch('/{id}','Shared\ProductsController@update');
         Route::delete('/{id}','Shared\ProductsController@destroy');            
-    });
-    
-    Route::group(['prefix'=>'questions'],function(){
-        Route::get('/','Shared\QuestionsController@index');   
-        Route::post('/','Shared\QuestionsController@store');
-        Route::get('/{id}','Shared\QuestionsController@show');
-        Route::get('/{id}/products','Shared\QuestionsController@products');
-        Route::get('/{id}/controls','Shared\QuestionsController@controls');
-        Route::patch('/{id}','Shared\QuestionsController@update');
-        Route::delete('/{id}','Shared\QuestionsController@destroy');
-    });
-    
-    Route::group(['prefix'=>'editor'],function(){  
-        Route::group(['prefix'=>'controltype'],function(){
-            Route::get('/','Shared\ControlTypesController@index');   
-            Route::post('/','Shared\ControlTypesController@store');
-            Route::get('/{id}','Shared\ControlTypesController@show');
-            Route::get('/{id}/attributes','Shared\ControlTypesController@attributes');
-            Route::patch('/{id}','Shared\ControlTypesController@update');
-            Route::delete('/{id}','Shared\ControlTypesController@destroy');
+    });    
+    Route::group(['prefix'=>'editor'],function(){ 
+        Route::group(['prefix'=>'questions'],function(){
+            Route::get('/','Shared\QuestionsController@index');   
+            Route::post('/','Shared\QuestionsController@store');
+            Route::get('/{id}','Shared\QuestionsController@show');
+            Route::get('/{id}/products','Shared\QuestionsController@products');
+            Route::get('/{id}/control','Shared\QuestionsController@control');
+            Route::patch('/{id}','Shared\QuestionsController@update');
+            Route::delete('/{id}','Shared\QuestionsController@destroy');
+        });    
+        Route::group(['prefix'=>'controls'],function(){
+            Route::get('/','Shared\ControlsController@index');   
+            Route::post('/','Shared\ControlsController@store');
+            Route::get('/{id}','Shared\ControlsController@show');
+            Route::get('/{id}/attributes','Shared\ControlsController@attributes');
+            Route::post('/{id}/attachattribute','Shared\ControlsController@attachAttribute');
+            Route::post('/{id}/detachattribute','Shared\ControlsController@detachAttribute');
+            Route::patch('/{id}','Shared\ControlsController@update');
+            Route::delete('/{id}','Shared\ControlsController@destroy');
         });        
-        Route::group(['prefix'=>'controlattribute'],function(){
-            Route::get('/','Shared\ControlAttributesController@index');   
-            Route::post('/','Shared\ControlAttributesController@store');
-            Route::get('/{id}','Shared\ControlAttributesController@show');
-            Route::get('/{id}/controltypes','Shared\ControlAttributesController@controltypes');
-            Route::patch('/{id}','Shared\ControlAttributesController@update');
-            Route::delete('/{id}','Shared\ControlAttributesController@destroy');
-        });        
-        Route::group(['prefix'=>'datatype'],function(){
-            Route::get('/','Shared\DataTypesController@index');   
-            Route::post('/','Shared\DataTypesController@store');
-            Route::get('/{id}','Shared\DataTypesController@show');
-            Route::patch('/{id}','Shared\DataTypesController@update');
-            Route::delete('/{id}','Shared\DataTypesController@destroy');
+        Route::group(['prefix'=>'attributes'],function(){
+            Route::get('/','Shared\AttributesController@index');   
+            Route::post('/','Shared\AttributesController@store');
+            Route::get('/{id}','Shared\AttributesController@show');
+            Route::get('/{id}/controls','Shared\AttributesController@controls');
+            Route::patch('/{id}','Shared\AttributesController@update');
+            Route::delete('/{id}','Shared\AttributesController@destroy');
         });
         Route::group(['prefix'=>'event'],function(){
             Route::get('/','Shared\EventsController@index');   
