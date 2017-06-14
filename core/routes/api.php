@@ -54,7 +54,8 @@ Route::group(['prefix'=>'v1'],function(){
         Route::get('/{id}/questions','Shared\ProductsController@questions');
         Route::post('/{id}/attachquestion','Shared\ProductsController@attachQuestion');
         Route::post('/{id}/detachquestion','Shared\ProductsController@detachQuestion');
-        Route::get('/{id}/form','Shared\ProductsController@form');
+        Route::get('/{id}/form','Shared\ProductsController@form'); 
+        Route::get('/{id}/answers','Shared\ProductsController@answers');
         Route::patch('/{id}','Shared\ProductsController@update');
         Route::delete('/{id}','Shared\ProductsController@destroy');            
     });    
@@ -86,7 +87,7 @@ Route::group(['prefix'=>'v1'],function(){
             Route::patch('/{id}','Shared\AttributesController@update');
             Route::delete('/{id}','Shared\AttributesController@destroy');
         });
-        Route::group(['prefix'=>'event'],function(){
+        Route::group(['prefix'=>'events'],function(){
             Route::get('/','Shared\EventsController@index');   
             Route::post('/','Shared\EventsController@store');
             Route::get('/{id}','Shared\EventsController@show');  

@@ -23,4 +23,9 @@ class Question extends BaseModel
     public function products() {
         return $this->belongsToMany('App\Models\Shared\Product');
     } 
+    
+    public function answer()
+    {
+        return $this->hasMany('App\Models\Shared\Answer', 'uuid', 'question_uuid');
+    }
 }

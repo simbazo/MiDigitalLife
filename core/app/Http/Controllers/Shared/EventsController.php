@@ -5,47 +5,37 @@ namespace App\Http\Controllers\Shared;
 use Illuminate\Http\Request;
 use App\Http\Requests\Shared\EventFormRequest;
 use App\Http\Controllers\Controller;
-use App\Models\Shared\Product;
 use App\Models\Shared\Event;
 
 class EventsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a list of Events.
+     * - order by created_at desc
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return response()->json(Event::all()); 
+        return response()->json(Event::orderBy('created_at', 'desc')->get()); 
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Store a newly created Event in storage.
      *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\EventFormRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(EventFormRequest $request)
     {
         $data = [
-            'product_id' => $request->get('product_id'),
+            'product_uuid' => $request->get('product_uuid'),
             'user_created'=> '524385af-9fce-4d75-b7a1-09119117491f' //auth()->user()->uuid
         ];
         
         $event = Event::create($data);
         
-        return response()->json(['msg'=>'New event created success'], 201);
+        return response()->json(['msg'=>'New event created successfully'], 201);
     }
 
     /**
@@ -71,17 +61,6 @@ class EventsController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -93,13 +72,13 @@ class EventsController extends Controller
         $event = Event::find($id);
         
         $data = [
-            'product_id' => $request->get('product_id'),
+            'product_id' => $request->get('product_uuid'),
             'user_updated'=> '524385af-9fce-4d75-b7a1-09119117491f' //auth()->user()->uuid
         ];
         
         $event->update($data);
         
-        return response()->json(['msg'=>'Event updated success'],201);
+        return response()->json(['msg'=>'Event updated successfully'],201);
     }
 
     /**

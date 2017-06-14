@@ -136,7 +136,7 @@ class ProductsController extends Controller
     }
     
     /**
-     * Attach a Question to the Product.
+     * Attach a Question to the Product when it is unlocked.
      * 
      * @param  \Illuminate\Http\Request  $request[question_uuid]
      * @param  string(36)  $id
@@ -144,8 +144,14 @@ class ProductsController extends Controller
      */
     public function attachQuestion(Request $request, $id)
     {
-        $questionID = $request->get('question_uuid');
+        
         $product = Product::find($id);
+        
+        if ($product->lock == 1) {
+            return response()->json(['msg'=>'Question may not be attached whilst the Product is locked'],501);
+        }
+        
+        $questionID = $request->get('question_uuid');
         $product->questions()->attach($questionID);
         
         //update product_question pivot table with order and grid values
@@ -158,7 +164,7 @@ class ProductsController extends Controller
     }
     
      /**
-     * Detach a Question from the Product.
+     * Detach a Question from the Product when it is unlocked.
      * 
      * @param  \Illuminate\Http\Request  $request[question_uuid]
      * @param  string(36)  $id
@@ -167,6 +173,11 @@ class ProductsController extends Controller
     public function detachQuestion(Request $request, $id)
     {
         $product = Product::find($id);
+        
+        if ($product->lock == 1) {
+            return response()->json(['msg'=>'Question may not be detached whilst the Product is locked'],501);
+        }
+        
         $product->questions()->detach($request->get('question_uuid'));
         
         return response()->json(['msg'=>'Question detached from product successfully'],201);
@@ -186,16 +197,6 @@ class ProductsController extends Controller
     {
         $product = Product::with('questions')->find($id);
         
-        //$product->map(function ($product) {
-            //$product['test'] = 'please ignore this';
-            //foreach ($product->questions as $question) {
-                //$control['controls'] = Control::with('attributes')->find($question->control_uuid);
-                
-            //}
-            
-            //return $product;
-        //});
-        
         $product->questions->map(function ($question) {
             $control = Control::with('attributes')->find($question->control_uuid);
             $question['control'] = $control;
@@ -207,6 +208,7 @@ class ProductsController extends Controller
 
     /**
      * Update the Product in storage.
+     *  - When locking a Product, Questions may not longer be attached or detached.
      *
      * @param  \Illuminate\Http\ProductFormRequest  $request
      * @param  string(36)  $id
@@ -219,6 +221,7 @@ class ProductsController extends Controller
         $data = [
             'short_name' => $request->get('short_name'),
             'long_name' => $request->get('long_name', null),
+            'lock' => $request->get('lock'),
             'user_updated'=> '524385af-9fce-4d75-b7a1-09119117491f' //auth()->user()->uuid
         ];
         

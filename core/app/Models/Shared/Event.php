@@ -13,6 +13,10 @@ class Event extends BaseModel
     
     protected $dates = ['deleted_at'];
     
-    protected  $fillable = ['product_id', 'user_created', 'user_updated', 'user_deleted'];
+    protected  $fillable = ['product_uuid', 'user_created', 'user_updated', 'user_deleted'];
     
+    public function answer()
+    {
+        //return $this->hasMany('App\Models\Shared\Answer', 'uuid', 'question_uuid');
+    }
 }

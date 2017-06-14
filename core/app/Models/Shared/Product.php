@@ -13,7 +13,7 @@ class Product extends BaseModel
     
     protected $dates = ['deleted_at'];
     
-    protected  $fillable = ['short_name', 'long_name', 'user_created', 'user_updated', 'user_deleted'];
+    protected  $fillable = ['short_name', 'long_name', 'lock', 'user_created', 'user_updated', 'user_deleted'];
     
     public function clients()
     {

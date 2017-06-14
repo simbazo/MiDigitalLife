@@ -16,7 +16,8 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->string('uuid', 36)->unique();
             $table->string('short_name', 20)->unique()->nullable(false);
-            $table->string('long_name')->unique()->nullable();
+            $table->string('long_name')->nullable();
+            $table->boolean('lock')->nullable(false)->default(0);
             $table->string('user_created')->nullable();
             $table->string('user_updated')->nullable();
             $table->string('user_deleted')->nullable();

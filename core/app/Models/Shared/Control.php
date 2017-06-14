@@ -13,7 +13,7 @@ class Control extends BaseModel
     
     protected $dates = ['deleted_at'];
     
-    protected  $fillable = ['control', 'user_created', 'user_updated', 'user_deleted'];
+    protected  $fillable = ['name', 'type', 'user_created', 'user_updated', 'user_deleted'];
     
     public function questions()
     {

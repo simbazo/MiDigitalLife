@@ -94,12 +94,7 @@ class QuestionsController extends Controller
      */
     public function control($id)
     {
-        $control = Question::find($id)->control()->get();
-            //->join('contacts', 'users.id', '=', 'contacts.user_id')
-            //->join('orders', 'users.id', '=', 'orders.user_id')
-            //->select('control_attributes.*')
-            //->get();
-        
+        $control = Question::find($id)->control()->get();        
         return response()->json($control);
     }
 

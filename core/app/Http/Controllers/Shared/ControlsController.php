@@ -20,7 +20,8 @@ class ControlsController extends Controller
      * 
      * Returns a list of existing controls with the following data:
      *  - uuid
-     *  - control (which matches an HTML5 input tag's type attribute)
+     *  - name must be unique for specificity (eg, 'button primary save')
+     *  - type (which matches an HTML5 input tag's type attribute)
      *  - user_created
      *  - user_updated
      *  - user_deleted
@@ -45,7 +46,8 @@ class ControlsController extends Controller
     public function store(ControlFormRequest $request)
     {
         $data = [
-            'control' => $request->get('control'),
+            'name' => $request->get('name'),
+            'type' => $request->get('type'),
             'user_created'=> '524385af-9fce-4d75-b7a1-09119117491f' //auth()->user()->uuid
         ];
         
@@ -122,7 +124,8 @@ class ControlsController extends Controller
         $control = Control::find($id);
         
         $data = [
-            'control' => $request->get('control'),
+            'name' => $request->get('name'),
+            'type' => $request->get('type'),
             'user_updated'=> '524385af-9fce-4d75-b7a1-09119117491f' //auth()->user()->uuid
         ];
         

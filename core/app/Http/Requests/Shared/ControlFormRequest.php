@@ -24,7 +24,8 @@ class ControlFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'control'=>'required|unique:controls',
+            'name' => 'required|unique:controls',
+            'type'=>'required',
         ];
     }
 }
