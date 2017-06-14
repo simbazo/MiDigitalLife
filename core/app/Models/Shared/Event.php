@@ -17,6 +17,6 @@ class Event extends BaseModel
     
     public function answer()
     {
-        //return $this->hasMany('App\Models\Shared\Answer', 'uuid', 'question_uuid');
+        return $this->hasMany('App\Models\Shared\Answer', 'uuid', 'question_uuid');
     }
 }

@@ -13,7 +13,7 @@ use App\Models\Shared\Answer;
  * Answer are stored in the tbl_controls table. Each answer has one question and belongs to one event.
  */
 
-class ControlsController extends Controller
+class AnswersController extends Controller
 {
     /**
      * Display a list of Answers.
@@ -33,7 +33,6 @@ class ControlsController extends Controller
      */
     public function index()
     {
-        //return response()->json(Control::with('attributes')->get());
         return response()->json(Answer::with('event', 'question')->get());
     }
 

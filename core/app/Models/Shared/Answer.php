@@ -17,11 +17,11 @@ class Answer extends BaseModel
     
     public function event()
     {
-        return $this->hasOne('App\Models\Shared\Event', 'event_uuid', 'uuid');
+        return $this->belongsTo('App\Models\Shared\Event', 'event_uuid', 'uuid');
     }
     
     public function question()
     {
-        return $this->hasOne('App\Models\Shared\Question', 'question_uuid', 'uuid');
+        return $this->belongsTo('App\Models\Shared\Question', 'question_uuid', 'uuid');
     }
 }

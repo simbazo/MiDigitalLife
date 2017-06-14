@@ -94,7 +94,15 @@ Route::group(['prefix'=>'v1'],function(){
             Route::get('/{id}/answers','Shared\EventsController@showAnswers'); 
             Route::patch('/{id}','Shared\EventsController@update');
             Route::delete('/{id}','Shared\EventsController@destroy');            
-        });   
+        });          
+        Route::group(['prefix'=>'answers'],function(){
+            Route::get('/','Shared\AnswersController@index');   
+            Route::post('/','Shared\AnswersController@store');
+            Route::get('/{id}','Shared\AnswersController@show');  
+            Route::get('/{id}/answers','Shared\AnswersController@showAnswers'); 
+            Route::patch('/{id}','Shared\AnswersController@update');
+            Route::delete('/{id}','Shared\AnswersController@destroy');            
+        });
     });
     
 	Route::post('register','Auth\Api\APiAuthController@register');

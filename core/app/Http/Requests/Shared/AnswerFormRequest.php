@@ -24,6 +24,8 @@ class AnswerFormRequest extends FormRequest
     public function rules()
     {
         return [
+            'event_uuid' => 'required',
+            'question_uuid' => 'required',
             'event_uuid' => 'unique_with:answers,question_uuid',
         ];
     }
