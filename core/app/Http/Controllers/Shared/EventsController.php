@@ -39,7 +39,7 @@ class EventsController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the Event.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -51,13 +51,28 @@ class EventsController extends Controller
         return response()->json($event);
     }
     
-    public function showAnswers($id)
+    /**
+     * Display the Product for this Event.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function product($id)
     {
-        return '[{"response":"show a list of answers for this event"}]';
-        
-        $event = Event::find($id);
-        
-        return response()->json($event);
+        $product = Event::find($id)->product()->get();
+        return response()->json($product);
+    }
+    
+    /**
+     * Display the answers for this Event.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function answers($id)
+    {
+        $answers = Event::find($id)->answers()->get();
+        return response()->json($answers);
     }
 
     /**

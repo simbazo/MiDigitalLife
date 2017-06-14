@@ -205,6 +205,18 @@ class ProductsController extends Controller
         
         return response()->json($product);
     }
+    
+    /**
+     * Display a list of events owned by this Product.
+     * 
+     * @param  string(36) $id
+     * @return \Illuminate\Http\Response
+    */
+    public function events($id)
+    {
+        $events = Product::find($id)->events()->orderBy('events.created_at', 'des')->get();
+        return response()->json($events);
+    }
 
     /**
      * Update the Product in storage.

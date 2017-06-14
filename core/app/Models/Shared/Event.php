@@ -15,8 +15,13 @@ class Event extends BaseModel
     
     protected  $fillable = ['product_uuid', 'user_created', 'user_updated', 'user_deleted'];
     
-    public function answer()
+    public function answers()
     {
-        return $this->hasMany('App\Models\Shared\Answer', 'uuid', 'question_uuid');
+        return $this->hasMany('App\Models\Shared\Answer', 'event_uuid', 'uuid');
+    }
+    
+    public function product()
+    {
+        return $this->belongsTo('App\Models\Shared\Product', 'uuid', 'product_uuid');
     }
 }

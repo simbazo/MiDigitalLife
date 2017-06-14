@@ -56,6 +56,7 @@ Route::group(['prefix'=>'v1'],function(){
         Route::post('/{id}/detachquestion','Shared\ProductsController@detachQuestion');
         Route::get('/{id}/form','Shared\ProductsController@form'); 
         Route::get('/{id}/answers','Shared\ProductsController@answers');
+        Route::get('/{id}/events','Shared\ProductsController@events');
         Route::patch('/{id}','Shared\ProductsController@update');
         Route::delete('/{id}','Shared\ProductsController@destroy');            
     });    
@@ -88,18 +89,19 @@ Route::group(['prefix'=>'v1'],function(){
             Route::delete('/{id}','Shared\AttributesController@destroy');
         });
         Route::group(['prefix'=>'events'],function(){
-            Route::get('/','Shared\EventsController@index');   
+            Route::get('/','Shared\EventsController@index');
             Route::post('/','Shared\EventsController@store');
-            Route::get('/{id}','Shared\EventsController@show');  
-            Route::get('/{id}/answers','Shared\EventsController@showAnswers'); 
+            Route::get('/{id}','Shared\EventsController@show');
+            Route::get('/{id}/product','Shared\EventsController@product');
+            Route::get('/{id}/answers','Shared\EventsController@answers'); 
             Route::patch('/{id}','Shared\EventsController@update');
-            Route::delete('/{id}','Shared\EventsController@destroy');            
+            Route::delete('/{id}','Shared\EventsController@destroy');
         });          
         Route::group(['prefix'=>'answers'],function(){
             Route::get('/','Shared\AnswersController@index');   
             Route::post('/','Shared\AnswersController@store');
             Route::get('/{id}','Shared\AnswersController@show');  
-            Route::get('/{id}/answers','Shared\AnswersController@showAnswers'); 
+            Route::get('/{id}/event','Shared\AnswersController@event'); 
             Route::patch('/{id}','Shared\AnswersController@update');
             Route::delete('/{id}','Shared\AnswersController@destroy');            
         });

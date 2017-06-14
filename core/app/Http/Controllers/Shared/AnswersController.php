@@ -68,6 +68,19 @@ class AnswersController extends Controller
         
         return response()->json($answer);
     }
+    
+    /**
+     * Display the Answer.
+     *
+     * @param  string(32)  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function event($id)
+    {
+        $event = Answer::find($id)->event()->get();
+        
+        return response()->json($event);
+    }
      
     /**
      * Update the Answer in storage.
