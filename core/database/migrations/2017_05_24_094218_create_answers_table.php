@@ -14,13 +14,14 @@ class CreateAnswersTable extends Migration
     public function up()
     {
         Schema::create('answers', function (Blueprint $table) {
-            $table->string('uuid',36)->unique();
+            $table->string('uuid',36)->primary();
             $table->string('event_uuid')->nullable(false);
             $table->string('question_uuid')->nullable(false);
             $table->string('answer')->nullable();
             $table->string('user_created')->nullable();
             $table->string('user_updated')->nullable();
             $table->string('user_deleted')->nullable();
+            $table->unique(['event_uuid', 'question_uuid']);
             $table->softDeletes();
             $table->timestamps();
         });
