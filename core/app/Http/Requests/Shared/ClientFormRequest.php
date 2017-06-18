@@ -26,6 +26,8 @@ class ClientFormRequest extends FormRequest
     {
         $rules = [
             'short_name'=>'required',
+            'country_id'=>'required',
+            'post_code'=>'required',
         ];
         
         return $rules;

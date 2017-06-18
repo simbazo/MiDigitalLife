@@ -22,6 +22,19 @@ class ClientsController extends Controller
      *  - uuid
      *  - short_name
      *  - long_name
+     *  - email
+     *  - phone
+     *  - fax
+     *  - country_id
+     *  - province
+     *  - city
+     *  - address_line1
+     *  - address_line2
+     *  - post_code
+     *  - contact_person_fname
+     *  - contact_person_lname
+     *  - contact_person_email
+     *  - contact_person_cell
      *  - user_created
      *  - user_updated
      *  - user_deleted
@@ -46,7 +59,20 @@ class ClientsController extends Controller
     {
         $data = [
             'short_name' => $request->get('short_name'),
-            'long_name' => $request->get('long_name', null),
+            'long_name' => $request->get('long_name', null),            
+            'email' => $request->get('email ', null),
+            'phone' => $request->get('phone', null),
+            'fax' => $request->get('fax', null),
+            'country_id' => $request->get('country_id'),
+            'province' => $request->get('province', null),
+            'city' => $request->get('city', null),
+            'address_line1' => $request->get('address_line1', null),
+            'address_line2' => $request->get('address_line2', null),
+            'post_code' => $request->get('post_code'),
+            'contact_person_fname' => $request->get('contact_person_fname', null),
+            'contact_person_lname' => $request->get('contact_person_lname', null),
+            'contact_person_email' => $request->get('contact_person_email', null),
+            'contact_person_cell' => $request->get('contact_person_cell', null),
             'user_created'=> '524385af-9fce-4d75-b7a1-09119117491f' //auth()->user()->uuid
         ];
         
@@ -177,6 +203,19 @@ class ClientsController extends Controller
         $data = [
             'short_name' => $request->get('short_name'),
             'long_name' => $request->get('long_name', null),
+            'email' => $request->get('email ', null),
+            'phone' => $request->get('phone', null),
+            'fax' => $request->get('fax', null),
+            'country_id' => $request->get('country_id'),
+            'province' => $request->get('province', null),
+            'city' => $request->get('city', null),
+            'address_line1' => $request->get('address_line1', null),
+            'address_line2' => $request->get('address_line2', null),
+            'post_code' => $request->get('post_code'),
+            'contact_person_fname' => $request->get('contact_person_fname', null),
+            'contact_person_lname' => $request->get('contact_person_lname', null),
+            'contact_person_email' => $request->get('contact_person_email', null),
+            'contact_person_cell' => $request->get('contact_person_cell', null),
             'user_updated'=> '524385af-9fce-4d75-b7a1-09119117491f' //auth()->user()->uuid
         ];
         
