@@ -17,6 +17,8 @@ class CreateProductsTable extends Migration
             $table->string('uuid', 36)->unique();
             $table->string('short_name', 20)->unique()->nullable(false);
             $table->string('long_name')->nullable();
+            $table->string('action')->nullable(false);
+            $table->string('method', 45)->nullable(false)->default('POST');
             $table->boolean('lock')->nullable(false)->default(0);
             $table->string('user_created')->nullable();
             $table->string('user_updated')->nullable();
