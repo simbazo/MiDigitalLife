@@ -19,6 +19,7 @@ class Client extends BaseModel
         'email',
         'phone',
         'fax',
+        'cell',
         'country_id',
         'province',
         'city',

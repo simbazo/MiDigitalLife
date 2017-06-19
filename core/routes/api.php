@@ -20,20 +20,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix'=>'v1'],function(){
     Route::group(['namespace' => 'Editor', 'prefix'=>'editor'],function(){
         Route::group(['prefix'=>'products'],function(){
-            Route::get('/','Editor\ProductsController@index');   
-            Route::post('/','Editor\ProductsController@store');
-            Route::get('/{id}','Editor\ProductsController@show');
-            Route::get('/{id}/projects','Editor\ProductsController@projects');
-            Route::post('/{id}/attachproject','Editor\ProductsController@attachProject');
-            Route::post('/{id}/detachproject','Editor\ProductsController@detachProject');
-            Route::get('/{id}/questions','Editor\ProductsController@questions');
-            Route::post('/{id}/attachquestion','Editor\ProductsController@attachQuestion');
-            Route::post('/{id}/detachquestion','Editor\ProductsController@detachQuestion');
-            Route::get('/{id}/form','Editor\ProductsController@form'); 
-            Route::get('/{id}/answers','Editor\ProductsController@answers');
-            Route::get('/{id}/events','Editor\ProductsController@events');
-            Route::patch('/{id}','Editor\ProductsController@update');
-            Route::delete('/{id}','Editor\ProductsController@destroy');            
+            Route::get('/','ProductsController@index');   
+            Route::post('/','ProductsController@store');
+            Route::get('/{id}','ProductsController@show');
+            Route::get('/{id}/projects','ProductsController@projects');
+            Route::post('/{id}/attachproject','ProductsController@attachProject');
+            Route::post('/{id}/detachproject','ProductsController@detachProject');
+            Route::get('/{id}/questions','ProductsController@questions');
+            Route::post('/{id}/attachquestion','ProductsController@attachQuestion');
+            Route::post('/{id}/detachquestion','ProductsController@detachQuestion');
+            Route::get('/{id}/form','ProductsController@form'); 
+            Route::get('/{id}/answers','ProductsController@answers');
+            Route::get('/{id}/events','ProductsController@events');
+            Route::patch('/{id}','ProductsController@update');
+            Route::delete('/{id}','ProductsController@destroy');            
         });
         Route::group(['prefix'=>'questions'],function(){
             Route::get('/','Editor\QuestionsController@index');   
@@ -65,30 +65,30 @@ Route::group(['prefix'=>'v1'],function(){
     });
     Route::group(['namespace' => 'Shared', 'prefix'=>'shared'],function(){   
         Route::group(['prefix'=>'clients'],function(){
-            Route::get('/','Shared\ClientsController@index');   
-            Route::post('/','Shared\ClientsController@store'); 
-            Route::get('/{id}','Shared\ClientsController@show'); 
-            Route::get('/{id}/projects','Shared\ClientsController@projects');
-            Route::post('/{id}/attachproject','Shared\ClientsController@attachProject');
-            Route::post('/{id}/detachproject','Shared\ClientsController@detachProject');
-            Route::get('/{id}/users','Shared\ClientsController@users');
-            Route::post('/{id}/attachuser','Shared\ClientsController@attachUser');
-            Route::post('/{id}/detachuser','Shared\ClientsController@detachUser');
-            Route::patch('/{id}','Shared\ClientsController@update');
-            Route::delete('/{id}','Shared\ClientsController@destroy');
+            Route::get('/','ClientsController@index');   
+            Route::post('/','ClientsController@store'); 
+            Route::get('/{id}','ClientsController@show'); 
+            Route::get('/{id}/projects','ClientsController@projects');
+            Route::post('/{id}/attachproject','ClientsController@attachProject');
+            Route::post('/{id}/detachproject','ClientsController@detachProject');
+            Route::get('/{id}/users','ClientsController@users');
+            Route::post('/{id}/attachuser','ClientsController@attachUser');
+            Route::post('/{id}/detachuser','ClientsController@detachUser');
+            Route::patch('/{id}','ClientsController@update');
+            Route::delete('/{id}','ClientsController@destroy');
         });    
         Route::group(['prefix'=>'projects'],function(){
-            Route::get('/','Shared\ProjectsController@index');   
-            Route::post('/','Shared\ProjectsController@store');
-            Route::get('/{id}','Shared\ProjectsController@show');
-            Route::get('/{id}/clients','Shared\ProjectsController@clients');
-            Route::post('/{id}/attachclient','Shared\ProjectsController@attachClient');
-            Route::post('/{id}/detachclient','Shared\ProjectsController@detachClient');
-            Route::get('/{id}/products','Shared\ProjectsController@products');
-            Route::post('/{id}/attachproduct','Shared\ProjectsController@attachProduct');
-            Route::post('/{id}/detachproduct','Shared\ProjectsController@detachProduct');
-            Route::patch('/{id}','Shared\ProjectsController@update');
-            Route::delete('/{id}','Shared\ProjectsController@destroy');
+            Route::get('/','ProjectsController@index');   
+            Route::post('/','ProjectsController@store');
+            Route::get('/{id}','ProjectsController@show');
+            Route::get('/{id}/clients','ProjectsController@clients');
+            Route::post('/{id}/attachclient','ProjectsController@attachClient');
+            Route::post('/{id}/detachclient','ProjectsController@detachClient');
+            Route::get('/{id}/products','ProjectsController@products');
+            Route::post('/{id}/attachproduct','ProjectsController@attachProduct');
+            Route::post('/{id}/detachproduct','ProjectsController@detachProduct');
+            Route::patch('/{id}','ProjectsController@update');
+            Route::delete('/{id}','ProjectsController@destroy');
         }); 
         Route::group(['prefix'=>'events'],function(){
             Route::get('/','Shared\EventsController@index');

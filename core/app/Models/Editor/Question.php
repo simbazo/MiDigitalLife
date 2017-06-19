@@ -17,7 +17,7 @@ class Question extends BaseModel
     
     public function control()
     {
-        return $this->hasOne('App\Models\Shared\Control', 'uuid', 'control_uuid');
+        return $this->hasOne('App\Models\Editor\Control', 'uuid', 'control_uuid');
     }
     
     public function products() {
@@ -26,6 +26,6 @@ class Question extends BaseModel
     
     public function answer()
     {
-        return $this->hasMany('App\Models\Shared\Answer', 'uuid', 'question_uuid');
+        return $this->hasMany('App\Models\Editor\Answer', 'uuid', 'question_uuid');
     }
 }

@@ -17,11 +17,11 @@ class Event extends BaseModel
     
     public function answers()
     {
-        return $this->hasMany('App\Models\Shared\Answer', 'event_uuid', 'uuid');
+        return $this->hasMany('App\Models\Editor\Answer', 'event_uuid', 'uuid');
     }
     
     public function product()
     {
-        return $this->belongsTo('App\Models\Shared\Product', 'uuid', 'product_uuid');
+        return $this->belongsTo('App\Models\Editor\Product', 'uuid', 'product_uuid');
     }
 }

@@ -22,6 +22,6 @@ class Answer extends BaseModel
     
     public function question()
     {
-        return $this->belongsTo('App\Models\Shared\Question', 'question_uuid', 'uuid');
+        return $this->belongsTo('App\Models\Editor\Question', 'question_uuid', 'uuid');
     }
 }

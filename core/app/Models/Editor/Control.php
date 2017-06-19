@@ -17,11 +17,11 @@ class Control extends BaseModel
     
     public function questions()
     {
-        return $this->belongsTo('App\Models\Shared\Question', 'control_uuid', 'uuid');
+        return $this->belongsTo('App\Models\Editor\Question', 'control_uuid', 'uuid');
     }
     
     public function attributes()
     {
-        return $this->belongsToMany('App\Models\Shared\Attribute');
+        return $this->belongsToMany('App\Models\Editor\Attribute');
     }
 }

@@ -27,7 +27,7 @@ class Product extends BaseModel
 
     public function questions()
     {
-        return $this->belongsToMany('App\Models\Shared\Question');
+        return $this->belongsToMany('App\Models\Editor\Question');
     } 
     
     public function events()

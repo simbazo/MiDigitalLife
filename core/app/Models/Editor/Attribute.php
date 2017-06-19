@@ -17,6 +17,6 @@ class Attribute extends BaseModel
     
     public function controls()
     {
-        return $this->belongsToMany('App\Models\Shared\Control');
+        return $this->belongsToMany('App\Models\Editor\Control');
     }
 }

@@ -23,6 +23,6 @@ class Project extends BaseModel
     
     public function products()
     {
-        return $this->belongsToMany('App\Models\Shared\Product');
+        return $this->belongsToMany('App\Models\Editor\Product');
     }
 }

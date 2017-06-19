@@ -1,7 +1,8 @@
 <?php
-
-/*Website Routes Satrt*/
-Route::get('/','Web\HomePageController@index')->name('home');
+    Route::get('/','Web\HomePageController@index')->name('home');
+    
+/* 
+//***** Start web routes *****
 Route::get('services','Web\ServicesPageController@index');
 Route::get('auth/login','Auth\AuthController@index')->name('login');
 Route::group(['prefix'=>'projects'],function(){
@@ -20,11 +21,10 @@ Route::group(['prefix'=>'aboutus'],function(){
 	Route::get('terms'	 ,'Web\AboutusPageController@terms');
 	Route::get('privacy','Web\AboutusPageController@index');
 });
-/*End web routes*/
+//***** End web routes *****
 
- 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index');
 Route::get('/activate/token/{token}','Auth\ActivationController@activate')->name('auth.activate');
 Route::get('/activate/resend','Auth\ActivationController@resend')->name('auth.activate.resend');
+*/
