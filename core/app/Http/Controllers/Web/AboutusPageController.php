@@ -11,32 +11,4 @@ class AboutusPageController extends Controller
     	return view('web.aboutus.index');
     }
     
-    /**
-     * [MiDigitalLife team ]
-     * @return [type] [text | image]
-     */
-    public function team(){
-
-    }
-    /**
-     * [contact description]
-     * @return [type] [description]
-     */
-    public function contact(){
-
-    }
-    /**
-     * [terms description]
-     * @return [type] [description]
-     */
-    public function terms(){
-
-    }
-    /**
-     * [privacy description]
-     * @return [type] [description]
-     */
-    public function privacy(){
-
-    }
 }

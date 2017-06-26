@@ -4,41 +4,45 @@ body {
     overflow-x: hidden;
 } 
 
- #header .live_chat_tab {
-        min-width:6.3em;
-        }
-        #header .live_chat_tab .svg_icon {
-        display:inline-block;
-        vertical-align:text-bottom;
-        }
-        #header .live_chat_tab a {
-        line-height:4;
-        margin:inherit;
-        width:inherit;
-        }
-        #header .live_chat_tab a:before {
-        left:-43.01px;
-        }
-        #header .live_chat_tab a:after {
-        left:4.1em;
-        }
+#header .live_chat_tab {
+    min-width:6.3em;
+}
+#header .live_chat_tab .svg_icon {
+    display:inline-block;
+    vertical-align:text-bottom;
+}
+#header .live_chat_tab a {
+    line-height:4;
+    margin:inherit;
+    width:inherit;
+}
+#header .live_chat_tab a:before {
+    left:-43.01px;
+}
+#header .live_chat_tab a:after {
+    left:4.1em;
+}
 
 nav ul li.activex{
-    background-color: red !important;
+    background-color: #696969 !important;
 }
 /*Home*/
 .hero.home_hero {
     background-image: url("/assets/img/bkground.jpeg");
     background-position: center center;
     color: #fff;
-    height: 30em;
+    height: 25em;
     position: relative;
+    background-size: cover;
 }
 .hero_background {
     display: none;
 }
 .hero.home_hero .cover_wrap {
-    padding: 5.5em;
+    padding-left: 4.5em;
+    padding-top: 3.1em;
+    padding-right: 5.5em;
+    padding-bottom: 5.5em;
 }
 .hero.home_hero h1, .hero.home_hero .price, .hero.home_hero b, .hero.home_hero .heading {
     
@@ -62,7 +66,7 @@ nav ul li.activex{
     transform-origin: 50% 50% 0;
     transition: none 0s ease 0s ;
     visibility: inherit;
-    white-space: nowrap;
+    white-space: normal;
     z-index: 18;
 }
 .hero.home_hero .wp_logo_small {
@@ -115,6 +119,7 @@ nav ul li.activex{
 .hero.home_hero ul {
     list-style: outside none none;
     text-transform: lowercase;
+    margin-bottom: -80px;
 }
 .hero.home_hero li a {
     color: #6694c6;
@@ -230,9 +235,9 @@ nav ul li.activex{
     position: relative;
 }
 @media screen and (min-width: 1800px) {
-#technology_by.double_pane {
-    background-size: cover;
-}
+    #technology_by.double_pane {
+        background-size: cover;
+    }
 }
 .adisc {
     text-align: center;
@@ -344,50 +349,50 @@ nav ul li.activex{
 @media only screen and (min-width: 1600px){
     /*Home*/
     .hero.home_hero {
-    background-image: url("/assets/img/bkground.jpeg");
-    background-position: center center;
-    color: #fff;
-    height: 30em;
-    background-size: 50%;
-    position: relative;
+        background-image: url("/assets/img/bkground.jpeg");
+        background-position: center center;
+        color: #fff;
+        height: 30em;
+        background-size: 100%;
+        position: relative;
     }   
     /*Projects*/
     .hero.project_pages0 {
-    background-image: url("/assets/img/projects/projects01.png");
-    background-position: center center;
-    color: #fff;
-    height: 30em;
-    position: relative;
-    background-size: 50%;
-    background-repeat: no-repeat;
-}
+        background-image: url("/assets/img/projects/projects01.png");
+        background-position: center center;
+        color: #fff;
+        height: 30em;
+        position: relative;
+        background-size: 50%;
+        background-repeat: no-repeat;
+    }
     /*Service Page*/
-.hero.service_page {
-    background-image: url("/assets/img/services/service_01.png");
-    background-position: center center;
-    color: #fff;
-    height: 30em;
-    position: relative;
-    background-size: 50%;
-    background-repeat: no-repeat;
-}
-/*About Page*/
+    .hero.service_page {
+        background-image: url("/assets/img/services/service_01.png");
+        background-position: center center;
+        color: #fff;
+        height: 30em;
+        position: relative;
+        background-size: 50%;
+        background-repeat: no-repeat;
+    }
+    /*About Page*/
 
-.hero.about_page {
-    background-image: url("/assets/img/aboutmidigital.jpeg");
-    background-position: center center;
-    color: #fff;
-    height: 27em;
-    position: relative;
-    background-size: 50%;
-    background-repeat: no-repeat;
-}
+    .hero.about_page {
+        background-image: url("/assets/img/aboutmidigital.jpeg");
+        background-position: center center;
+        color: #fff;
+        height: 27em;
+        position: relative;
+        background-size: 50%;
+        background-repeat: no-repeat;
+    }
 
 }
 @media only screen and(max-width: 480px){
- 
- /*Home*/
-    .hero.home_hero {
+   
+   /*Home*/
+   .hero.home_hero {
     background-image: url("/assets/img/bkground.jpeg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -395,9 +400,9 @@ nav ul li.activex{
     color: #fff;
     height: 12em;
     position: relative;
-    }   
-    /*Projects*/
-   .hero.project_pages0 {
+}   
+/*Projects*/
+.hero.project_pages0 {
     background-image: url("/assets/img/projects/projects01.png");
     background-position: center center;
     background-repeat: no-repeat;
@@ -406,7 +411,7 @@ nav ul li.activex{
     height: 12em;
     position: relative;
 }
-    /*Service Page*/
+/*Service Page*/
 .hero.service_page {
     background-image: url("/assets/img/services/service_01.png");
     background-position: center center;
@@ -691,4 +696,339 @@ nav ul li.activex{
     background-color: #3575d3;
     color: #fff;
 }
+
+#contact_form {
+    /* text-align: center;*/
+    margin-right: 25%;
+    margin-left: 25%;
+
+}
+
+#form_align {
+    margin-left: 24%;
+    margin-right: -30%;
+
+}
+
+.col-md-4.control-label{
+    text-align: left !important;
+    width: 23.333%;
+}
+
+#coming_soon_notice {
+    margin-top: 5%;
+    border: 2px #fff solid;
+    border-width: 100%;
+}
+
+#coming_soon_text {
+    text-align: center !important;
+}
+
+.well {
+    margin-top: 20px;
+    padding: 0px;
+    
+    border: 0px;
+    border-radius: 0px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+}
+
+#downloads {
+    float:left;
+    margin-top: 25%;
+    margin-left: 3%;
+    border: 2px solid white;
+    text-align: left;
+}
+
+#trusted ul{
+  list-style: none;
+
+}
+#trusted li{
+  display: inline;
+  float: right;
+  padding: 5px;
+}
+
+#trust_align {
+    text-align: center;
+    padding-top: 29%;
+}
+
+#hero_center {
+    text-align: center;
+
+}
+
+#secondary_bar_home_hero {
+    white-space: normal;
+}
+
+.page_info {
+    text-align: center;
+    background-color: #525252;
+    padding: 1px;
+    width: 100%;
+}
+
+
+#sector ul{
+  list-style: none;
+
+}
+#sector li{
+  display: inline;
+  padding: 50px;
+}
+
+#sector_align {
+    text-align: center;
+}
+
+#sector_text ul{
+  list-style: none;
+
+}
+#sector_text li{
+  display: inline;
+  padding: 50px;
+}
+
+#sector_text_align {
+    text-align: center;
+}
+
+.approach_experts {
+    float: left !important;
+}
+
+.approach_img {
+    float: right;
+    width: 100%;
+    margin-top: 15%;
+    margin-bottom: 15%
+}
+
+.experts_img{
+    float: right;
+    width: 100%;
+    margin-top: 15%;
+}
+
+.ecosystem {
+    float: right !important;
+}
+
+.ecosystem_img {
+    float: left;
+    width: 100%;
+    margin-top: 20%;
+    margin-bottom: 15%;
+
+}
+
+.our_button_link {
+    text-align: center;
+    background-color: #00c952;
+    color: #fff;
+}
+
+#homepage_bottom{
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-bottom: 20px;
+}
+
+#homepage_bottom .row{
+    padding-bottom: 25px;
+}
+
+#homepage_mid ul {
+    text-align: center;
+    list-style: none;
+}
+
+#homepage_mid li {
+    display: inline-block;
+    padding: 15px;
+} 
+
+#homepage_mid {
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center;
+}
+
+.panel-default>.panel-heading {
+    color: #fff !important;
+    background-color: #00c952 !important;
+    border-color: #000 !important;
+}
+
+#industries_image {
+ background-image: url(/assets/img/industries.jpg);
+ background-position: center center;
+ color: #fff;
+ height: 25em;
+ position: relative;
+ background-size: cover;
+ background-repeat: no-repeat;
+}
+
+.fullscreen {
+    height: 80vh;
+    width: 100%;
+}
+
+.fullscreen h3{
+    text-align: center;
+}
+
+.page_info h2{
+    line-height: 0em !important;
+    font-size: 1.8em;
+}
+
+.content_aligning{
+    margin-right: 10% !important;
+    margin-left: 10% !important;
+}
+
+#community_image {
+    background-image: url(/assets/img/Community.jpg);
+    height: 100%;
+    display: inline-block;
+    background-size: cover;
+    opacity: 0.85;
+}
+#community_bg {
+    background-color: gray;
+    opacity: 0.8;
+    color: white;
+    padding-top: 29px;
+}
+#elearning_image {
+    background-image: url(/assets/img/elearning.jpg);
+    height: 100%;
+    display: inline-block;
+    background-size: cover;
+    opacity: 0.85;
+}
+#elearning_bg {
+    background-color: gray;
+    opacity: 0.8;
+    color: white;
+    padding-top: 29px;
+}
+#healthcare_image {
+    background-image: url(/assets/img/healthcare.jpg);
+    height: 100%;
+    display: inline-block;
+    background-size: cover;
+    opacity: 0.85;
+}
+#healthcare_bg {
+    background-color: gray;
+    opacity: 0.8;
+    color: white;
+    padding-top: 29px;
+}
+#retail_image {
+    background-image: url(/assets/img/retail.jpg);
+    height: 100%;
+    display: inline-block;
+    background-size: cover;
+    opacity: 0.85;
+}
+#retail_bg {
+    background-color: gray;
+    opacity: 0.8;
+    color: white;
+    padding-top: 29px;
+}
+
+#approach_image {
+ background-image: url(/assets/img/approach_cover.jpg);
+ background-position: center center;
+ color: #fff;
+ height: 25em;
+ position: relative;
+ background-size: cover;
+ background-repeat: no-repeat;
+}
+
+#about_image {
+ background-image: url(/assets/img/philosophy.jpg);
+ background-position: center center;
+ color: #fff;
+ height: 25em;
+ background-color: #e6e0d4;
+ position: relative;
+ background-size: auto 100%;
+ background-repeat: no-repeat;
+}
+
+#about_mid {
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-bottom: 20px;
+    padding-top: 25px;
+}
+
+.about_text{
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-bottom: 20px
+}
+
+#about_mobile{
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center;
+}
+
+/*#healthapp_image {
+   background-image: url(/assets/img/healthcare_icon.png);
+    height: 100vh;
+    display: inline-block;
+    background-size: contain;
+    opacity: 0.85;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    }*/
+
+#approach_content {
+    margin-right: 15%;
+    margin-left: 15%;
+}
+
+#app_sections{
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    color: black;
+}
+
+.card-image img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 4px;
+    height: 100% !important;
+    width: auto !important;
+}
+
+.app_categories{
+    display: inline-block !important;
+}
+
+#app_sections .col-xs-6 {
+    display: inline-block;
+    width: 25% !important;
+    word-wrap: break-word;
+}
+
+
 
