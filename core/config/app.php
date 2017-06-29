@@ -178,8 +178,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\MidigitalLifeProvider::class,
-        Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
-        Felixkiss\UniqueWithValidator\ServiceProvider::class,
        //Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
