@@ -29,7 +29,7 @@
                             <p>We work to ensure that as our lives and businesses become more connected, that those connections are useful and easy. One of the ways we do this is by recognizing that our connections aren't "stand-alone" but form part of a larger digital ecosystem. We leverage off of this idea and our value of collaboration by sharing MiDigitalLife resources between parties for mobile and web-based systems. By connecting clients to our ecosystem, and providing user logins for clients to manage their data should they wish, we are able to build faster and at a lower cost.</p>
                         </div>
                         <div class="col-xs-6 ">
-                            <img class="approach_img" src="/assets/img/ecosystem.jpg" alt="" />
+                            <img class="approach_img" src="/assets/img/Ecosystem.jpg" alt="" />
                         </div>
                     </div>
 
