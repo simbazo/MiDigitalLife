@@ -910,7 +910,7 @@ nav ul li.activex{
     padding-top: 29px;
 }
 #elearning_image {
-    background-image: url(/assets/img/elearning.jpg);
+    background-image: url(/assets/img/Elearning.jpg);
     height: 100%;
     display: inline-block;
     background-size: cover;
@@ -923,7 +923,7 @@ nav ul li.activex{
     padding-top: 29px;
 }
 #healthcare_image {
-    background-image: url(/assets/img/healthcare.jpg);
+    background-image: url(/assets/img/Healthcare.jpg);
     height: 100%;
     display: inline-block;
     background-size: cover;
@@ -936,7 +936,7 @@ nav ul li.activex{
     padding-top: 29px;
 }
 #retail_image {
-    background-image: url(/assets/img/retail.jpg);
+    background-image: url(/assets/img/Retail.jpg);
     height: 100%;
     display: inline-block;
     background-size: cover;
