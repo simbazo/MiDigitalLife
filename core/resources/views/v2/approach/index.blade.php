@@ -21,8 +21,7 @@
         <div class="row">
             <div class="col-md- 12 text-center">
                 <h3>The driving force behind our approach to success is partnership and collaboration with our clients,<br> making you and your company, menbers of our team as we build.</h3>
-            </div>
-            <div class="col-sm-6">
+            </div> 
             <div class="col-sm-4">
             <p class="as_is">Gone are the days where companies would give their idea to an App Developer, and hope that they would deliver the product that they had envisioned, on time, and within budget. It was a clumsy model that lead to frustration on both sides, and developers and clients often seems to speak two different languages when it comes to technology.</p>
             <p class="as_is">Our approach to App Development seeks to solve the problem of unmet expectations and frustrations, bringing you along for the journey, at every step of the way.</p>
