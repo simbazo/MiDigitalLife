@@ -10,4 +10,8 @@ class HomePageController extends Controller
     public function index(){
     	return view('web.home.index');
     }
+
+    public function home(){
+    	return view('v2.home.index');
+    }
 }

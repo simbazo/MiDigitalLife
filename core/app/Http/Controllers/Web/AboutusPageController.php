@@ -10,5 +10,9 @@ class AboutusPageController extends Controller
     public function index(){
     	return view('web.aboutus.index');
     }
+
+    public function aboutus(){
+    	return view('v2.aboutus.index');
+    }
     
 }

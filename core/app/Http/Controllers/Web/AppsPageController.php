@@ -9,5 +9,9 @@ class AppsPageController extends Controller
 {
     public function index(){
     	return view('web.apps.index');
+    }
+
+    public function apps(){
+    	return view('v2.apps.index');
     }   
 }

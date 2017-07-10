@@ -10,5 +10,9 @@ class ApproachPageController extends Controller
     public function index(){
     	return view('web.approach.index');
     }
+
+    public function approach(){
+    	return view('v2.approach.index');
+    }
     
 }
