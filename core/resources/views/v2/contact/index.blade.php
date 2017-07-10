@@ -40,7 +40,7 @@
 							</div>
 						</div><!-- /.col-md-6 -->
 					</div><!-- /.row-->
-					<button type="submit" class="btn btn-primary">Send Message</button>
+					<button type="submit" class="btn btn-primary" disabled>Send Message</button>
 				</form>
 			</div><!-- /.col-md-8 -->
 		</div>
