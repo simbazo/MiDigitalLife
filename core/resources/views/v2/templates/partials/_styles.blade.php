@@ -1,7 +1,7 @@
 
     <!-- web-fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <!-- off-canvas -->
     <link href="{{asset('assets/v2/css/mobile-menu.css')}}" rel="stylesheet">
     <!-- font-awesome -->

@@ -8,7 +8,7 @@
 </section>
 <!-- .page-title -->
 
-<section class="service-icon-style ptb-100">
+<section class="service-icon-style ptb-100" id="community">
     <section class="section-title">
         <div class="container text-center">
             <h2>COMMUNITY!</h2>
@@ -33,7 +33,7 @@
 
     </div>
 </section>
-<section class="service-icon-style ptb-100">
+<section class="service-icon-style ptb-100" id="e-learning">
     <section class="section-title">
         <div class="container text-center">
             <h2>E-LEARNING</h2>
@@ -58,7 +58,7 @@
     </div>
 </section>
 
-<section class="service-icon-style ptb-100">
+<section class="service-icon-style ptb-100" id="healthcare">
     <section class="section-title">
         <div class="container text-center">
             <h2>HEALTHCARE</h2>
@@ -82,7 +82,7 @@
 
     </div>
 </section>
-<section class="service-icon-style ptb-100">
+<section class="service-icon-style ptb-100" id="retail">
     <section class="section-title">
         <div class="container text-center">
             <h2>RETAIL</h2>

@@ -21,8 +21,7 @@
                     <div class="caption">
                         <h3><a href="#">Community</a></h3>
 
-                        <p>Praesent dapibus eleifend aug eget sollicitudin velit malesuada Aliquam blandit diam feugiat
-                            tellus odio malesuada ex.</p>
+                        <p>Whether it is connecting donors with the projects that they have funded, facilitating farmers showcasing which crops they have available for purchase,... <a href="{{route('v2.industries')}}#community">read more</a></p>
                     </div>
                 </div>
             </div>
@@ -33,8 +32,7 @@
                     <div class="caption">
                         <h3><a href="#">Elearning</a></h3>
 
-                        <p>Praesent dapibus eleifend aug eget sollicitudin velit malesuada Aliquam blandit diam feugiat
-                            tellus odio malesuada ex.</p>
+                        <p>Connecting those with academic knowledge with those in need of learning support, our e-learning apps are designed to support the learning processa ... <a href="{{route('v2.industries')}}#e-learning">read more</a></p>
                     </div>
                 </div>
             </div>
@@ -48,8 +46,7 @@
                     <div class="caption">
                         <h3><a href="#">Healthcare</a></h3>
 
-                        <p>Praesent dapibus eleifend aug eget sollicitudin velit malesuada Aliquam blandit diam feugiat
-                            tellus odio malesuada ex.</p>
+                        <p>Our experience working in, and creating Apps for, the healthcare sector has given us strategic insight into the needs of both clients and users.... <a href="{{route('v2.industries')}}#healthcare">read more</a></p>
                     </div>
                 </div>
             </div>
@@ -60,8 +57,7 @@
                     <div class="caption">
                         <h3><a href="#">Retail</a></h3>
 
-                        <p>Praesent dapibus eleifend aug eget sollicitudin velit malesuada Aliquam blandit diam feugiat
-                            tellus odio malesuada ex.</p>
+                        <p>The increased uptake of Smartphones within within South Africa and beyond is revolutionising the way that many that many companies do business,... <a href="{{route('v2.industries')}}#retail">read more</a></p>
                     </div>
                 </div>
             </div>
@@ -103,7 +99,7 @@
                         <h3><a href="#">CREATING A DIGITAL ECOSYSTEM</a></h3>
 
                         <p>With so much technology available, it is important that you can communicate with your users in a safe, familiar environment.</p>
-                        <p>Learn how we don't make "just another app" but a resource for you and your users. <br><br></p>
+                        <p>Learn how we don't make "just another app" but a resource for you and your users.</p>
                     </div>
                 </div>
             </div>
